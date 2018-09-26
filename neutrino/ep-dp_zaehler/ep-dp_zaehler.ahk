@@ -10,7 +10,7 @@ Gui, Add, Button, x40 y5 h20 w120 gep, Einblendpunkte
 Gui, Add, Button, x40 h20 w120 gdp, Datenpunkte
 Gui, Add, Button, x65 y135 h20 w70 greload, Neu laden
 Gui, Add, Button, x65 h20 w70 gexit, Exit
-Return
+return
 
 ep:
 	FileSelectFile, SelectedFile, , C:\Users\%A_UserName%\Desktop, GLT Stapeldruck auswählen, *.pdf
