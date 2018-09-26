@@ -5,11 +5,11 @@ I_Icon = %A_ScriptDir%\icons\zblue.ico
 Menu, Tray, Icon, %I_Icon%
 Menu, Tray, Tip, EP/DP Zähler
 
-Gui, show, w200 h200, EP/DP Zähler
-Gui, add, button, x40 y5 h20 w120 gep, Einblendpunkte
-Gui, add, button, x40 h20 w120 gdp, Datenpunkte
-Gui, add, button, x65 y135 h20 w70 greload, Neu laden
-Gui, add, button, x65 h20 w70 gexit, Exit
+Gui, Show, w200 h200, EP/DP Zähler
+Gui, Add, Button, x40 y5 h20 w120 gep, Einblendpunkte
+Gui, Add, Button, x40 h20 w120 gdp, Datenpunkte
+Gui, Add, Button, x65 y135 h20 w70 greload, Neu laden
+Gui, Add, Button, x65 h20 w70 gexit, Exit
 Return
 
 ep:
@@ -90,8 +90,8 @@ dp:
 reload:
 Reload
 
-guiclose:
+exit:
 ExitApp
 
-exit:
-Exitapp
+GuiClose: 
+ExitApp
