@@ -1,4 +1,4 @@
-﻿;V0.1
+﻿;V0.2.0
 #Persistent
 ;Keeps a script permanently running (that is, until the user closes it or ExitApp is encountered).
 #SingleInstance, force
@@ -9,10 +9,20 @@ SetWorkingDir %A_ScriptDir%
 ;Script unconditionally uses its own folder as its working directory.
 
 Menu, Tray, Tip, Erlkönig
+;Menu, Tray, NoStandard
+Menu, Tray, Add
+Menu, Tray, Add, Info..., gAbout
+Menu, Tray, Add, Hilfe, sHelp
+Menu, Tray, Add
+Menu, Tray, Add, EP/DP Zähler, sRunEPDP
+Menu, Tray, Add
+Menu, Tray, Add, Programm anhalten, sPause
+Menu, Tray, Add, Beenden, sExit
+
 
 Loop,
 	{
-		I_Icon = %A_ScriptDir%\icons\Kblue.ico
+		I_Icon = %A_ScriptDir%\icons\kblue.ico
 		Menu, Tray, Icon, %I_Icon%
 		Sleep, 2000
 		I_Icon = %A_ScriptDir%\icons\ugold.ico
@@ -154,3 +164,34 @@ return
 	+Right::SendInput, {AltDown}bc{AltUp}
 	;Shift+Right - rotate right
 #IfWinActive
+
+sRunEPDP:
+	Run, C:\Users\jurca\Documents\GitRepos\erlkoenig\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
+	return
+
+sPause:
+	menu, tray, ToggleCheck, Programm anhalten
+	Suspend, Toggle
+	Pause, Toggle
+	return
+
+sExit:
+	ExitApp
+	Return
+
+gAbout:
+	Gui, 99:Destroy
+	Gui, 99:Add, Text, ,©
+	Gui, 99:Add, Text, ,Version Vx.x.x, YYYY-MM-DD
+	Gui, 99:Add, Text, cblue ggitlink, GitHub
+	Gui, 99:Add, Text,
+	Gui, 99:Show, AutoSize
+	return
+
+sGitlink:
+	Run, https://github.com/tonkomnom/erlkoenig
+	return
+
+sHelp:
+	Run, https://github.com/tonkomnom/erlkoenig
+	return
