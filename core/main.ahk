@@ -1,4 +1,4 @@
-﻿;V0.2.0
+﻿;V0.2.1
 #Persistent
 ;Keeps a script permanently running (that is, until the user closes it or ExitApp is encountered).
 #SingleInstance, force
@@ -15,6 +15,7 @@ Menu, Tray, Add, Info..., gAbout
 Menu, Tray, Add, Hilfe, sHelp
 Menu, Tray, Add
 Menu, Tray, Add, EP/DP Zähler, sRunEPDP
+Menu, Tray, Add, Neutrino GLT Fernbedienung, sRunremote
 Menu, Tray, Add
 Menu, Tray, Add, Programm anhalten, sPause
 Menu, Tray, Add, Beenden, sExit
@@ -166,7 +167,11 @@ return
 #IfWinActive
 
 sRunEPDP:
-	Run, C:\Users\jurca\Documents\GitRepos\erlkoenig\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
+	Run, %A_ProgramFiles%\erlkoenig\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
+	return
+
+sRunremote:
+	Run, %A_ProgramFiles%\erlkoenig\neutrino\remote\remote.ahk
 	return
 
 sPause:
