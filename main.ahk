@@ -23,13 +23,13 @@ Menu, Tray, Add, Beenden, sExit
 
 Loop,
 	{
-		I_Icon = %A_ScriptDir%\core\icons\kblue.ico
+		I_Icon = %A_ScriptDir%\icons\kblue.ico
 		Menu, Tray, Icon, %I_Icon%
 		Sleep, 2000
-		I_Icon = %A_ScriptDir%\core\icons\ugold.ico
+		I_Icon = %A_ScriptDir%\icons\ugold.ico
 		Menu, Tray, Icon, %I_Icon%
 		Sleep, 2000
-		I_Icon = %A_ScriptDir%\core\icons\pblue.ico
+		I_Icon = %A_ScriptDir%\icons\pblue.ico
 		Menu, Tray, Icon, %I_Icon%
 		Sleep, 2000
 	}
@@ -167,11 +167,11 @@ return
 #IfWinActive
 
 sRunEPDP:
-	Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
+	Run, %A_ProgramFiles%\erlkoenig\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
 	return
 
 sRunremote:
-	Run, %A_ScriptDir%\neutrino\remote\remote.ahk
+	Run, %A_ProgramFiles%\erlkoenig\neutrino\remote\remote.ahk
 	return
 
 sPause:
