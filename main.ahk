@@ -1,4 +1,4 @@
-﻿;V0.2.1
+﻿;V0.3.0
 #Persistent
 ;Keeps a script permanently running (that is, until the user closes it or ExitApp is encountered).
 #SingleInstance, force
@@ -11,15 +11,43 @@ SetWorkingDir %A_ScriptDir%
 Menu, Tray, Tip, Erlkönig
 ;Menu, Tray, NoStandard
 Menu, Tray, Add
+
 Menu, Tray, Add, Info..., gAbout
 Menu, Tray, Add, Hilfe, sHelp
 Menu, Tray, Add
+
+Menu, autostartsub, Add, Erlkoenig, sautomain
+Menu, autostartsub, Add, DatSiDoku, sautodatsi
+Menu, Tray, Add, Autostart, :autostartsub
+Menu, Tray, Add
+
 Menu, Tray, Add, EP/DP Zähler, sRunEPDP
 Menu, Tray, Add, Neutrino GLT Fernbedienung, sRunremote
 Menu, Tray, Add
+
 Menu, Tray, Add, Programm anhalten, sPause
 Menu, Tray, Add, Beenden, sExit
 
+
+IniRead, vautomaininit, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
+	if vautomaininit = true
+		{
+			Menu, autostartsub, Check, Erlkoenig
+		}
+	else
+		{
+			Menu, autostartsub, UnCheck, Erlkoenig
+		}
+
+IniRead, vautodatsiinit, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+	if vautodatsiinit = true
+		{
+			Menu, autostartsub, Check, DatSiDoku
+		}
+	else
+		{
+			Menu, autostartsub, UnCheck, DatSiDoku
+		}
 
 Loop,
 	{
@@ -166,6 +194,39 @@ return
 	;Shift+Right - rotate right
 #IfWinActive
 
+
+sautomain:
+	IniRead, vautomain, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
+		if vautomain = true
+			{
+				Menu, autostartsub, UnCheck, Erlkoenig
+				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
+				FileDelete, %A_Startup%\%A_ScriptName%.lnk
+			}
+		else
+			{
+				Menu, autostartsub, Check, Erlkoenig
+				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
+				FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\%A_ScriptName%.lnk
+			}
+	return
+
+sautodatsi:
+	IniRead, vautodatsi, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+		if vautodatsi = true
+			{
+				Menu, autostartsub, UnCheck, DatSiDoku
+				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+				FileDelete, %A_Startup%\datsidoku.lnk
+			}
+		else
+			{
+				Menu, autostartsub, Check, DatSiDoku
+				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+				FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk
+			}
+	return
+
 sRunEPDP:
 	Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
 	return
@@ -182,7 +243,7 @@ sPause:
 
 sExit:
 	ExitApp
-	Return
+	return
 
 gAbout:
 	Gui, 99:Destroy
