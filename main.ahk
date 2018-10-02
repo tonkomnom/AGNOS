@@ -1,4 +1,4 @@
-﻿;V0.3.0
+﻿;V0.3.1
 #Persistent
 ;Keeps a script permanently running (that is, until the user closes it or ExitApp is encountered).
 #SingleInstance, force
@@ -87,6 +87,24 @@ return
 		}
 	else
 		Send, ^s
+	return
+
+$F12::
+	KeyWait, F12, T1.0
+		if ErrorLevel
+			{
+				;long
+				DetectHiddenWindows, On
+				GroupAdd, ahk_scripts, ahk_class AutoHotkey
+				GroupClose, ahk_scripts, A
+			}
+		else
+			{
+				KeyWait, F12, D T0.01
+					if ErrorLevel
+						;single
+						SendInput, {F12}
+			}
 	return
 
 ;hotkeys active for PS4000
