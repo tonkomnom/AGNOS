@@ -1,8 +1,6 @@
 ﻿#SingleInstance, force
 SetWorkingDir %A_ScriptDir%
 
-FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\%A_ScriptName%.lnk
-
 I_Icon = %A_ScriptDir%\icons\dblue.ico
 Menu, Tray, Icon, %I_Icon%
 Menu, Tray, Tip, %A_ScriptName%
