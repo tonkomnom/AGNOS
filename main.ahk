@@ -259,7 +259,7 @@ sDatSiDoku:
 	return
 
 sPause:
-	menu, tray, ToggleCheck, Programm anhalten
+	menu, tray, ToggleCheck, A.G.N.O.S. anhalten
 	Suspend, Toggle
 	Pause, Toggle
 	return
