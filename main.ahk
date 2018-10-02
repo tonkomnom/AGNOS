@@ -26,7 +26,7 @@ Menu, Tray, Add, Neutrino GLT Fernbedienung, sRunremote
 Menu, Tray, Add, DatSiDoku, sDatSiDoku
 Menu, Tray, Add
 
-Menu, Tray, Add, Programm anhalten, sPause
+Menu, Tray, Add, A.G.N.O.S. anhalten, sPause
 Menu, Tray, Add, Beenden, sExit
 
 
