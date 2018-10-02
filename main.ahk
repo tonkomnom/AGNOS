@@ -23,6 +23,7 @@ Menu, Tray, Add
 
 Menu, Tray, Add, EP/DP Zähler, sRunEPDP
 Menu, Tray, Add, Neutrino GLT Fernbedienung, sRunremote
+Menu, Tray, Add, DatSiDoku, sDatSiDoku
 Menu, Tray, Add
 
 Menu, Tray, Add, Programm anhalten, sPause
@@ -235,6 +236,10 @@ sRunremote:
 	Run, %A_ScriptDir%\neutrino\remote\remote.ahk
 	return
 
+sDatSiDoku:
+	Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk
+	return
+
 sPause:
 	menu, tray, ToggleCheck, Programm anhalten
 	Suspend, Toggle
@@ -247,14 +252,14 @@ sExit:
 
 gAbout:
 	Gui, 99:Destroy
-	Gui, 99:Add, Text, ,©
-	Gui, 99:Add, Text, ,Version Vx.x.x, YYYY-MM-DD
-	Gui, 99:Add, Text, cblue ggitlink, GitHub
+	Gui, 99:Add, Text, ,© Tonk Omnom
+	Gui, 99:Add, Text, ,Version V0.3.0, 2018-10-02
+	Gui, 99:Add, Text, cblue gGitlink, GitHub
 	Gui, 99:Add, Text,
 	Gui, 99:Show, AutoSize
 	return
 
-sGitlink:
+Gitlink:
 	Run, https://github.com/tonkomnom/erlkoenig
 	return
 
