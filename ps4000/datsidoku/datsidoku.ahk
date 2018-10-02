@@ -5,14 +5,11 @@ I_Icon = %A_ScriptDir%\icons\dblue.ico
 Menu, Tray, Icon, %I_Icon%
 Menu, Tray, Tip, %A_ScriptName%
 Menu, Tray, NoStandard
-Menu, Tray, Add, Info..., guiAbout
-Menu, Tray, Add, Hilfe, guiHelp
-Menu, Tray, Add
 Menu, Tray, Add, Sichern über PS4000, guiSichern
 Menu, Tray, Add, Wiederherstellen über PS4000, guiHerstellen
 Menu, Tray, Add, Ablage über Explorer, guiExplorer
 Menu, Tray, Add
-Menu, Tray, Add, Programm anhalten, gPause
+Menu, Tray, Add, DatSiDoku anhalten, gPause
 Menu, Tray, Add, Beenden, gExit
 return
 
@@ -182,23 +179,6 @@ gPause:
 gExit:
 	ExitApp
 	Return
-
-guiAbout:
-	Gui, 99:Destroy
-	Gui, 99:Add, Text, ,© tonkomnom
-	Gui, 99:Add, Text, ,Version V1.0.1, 2018-09-19
-	Gui, 99:Add, Text, cblue ggitlink, GitHub
-	Gui, 99:Add, Text,
-	Gui, 99:Show, AutoSize
-	return
-
-gitlink:
-	Run, https://github.com/tonkomnom/ahk-kp/blob/master/PS4000/DatSiDoku/PS4000_DatSiDoku.ahk
-	return
-
-guiHelp:
-	Run, https://github.com/tonkomnom/ahk-kp/blob/master/PS4000/DatSiDoku/
-	return
 
 guiclose:
 Gui, Destroy
