@@ -1,4 +1,5 @@
 ﻿;give instructions to install AHK???
 
-FileCreateShortcut, %A_ScriptDir%}\core\main.ahk, %A_Startup%\%A_ScriptName%.lnk
-Run, %A_ScriptDir%}\core\main.ahk
+FileCreateShortcut, %A_ScriptDir%}\main.ahk, %A_Startup%\main.lnk
+FileCreateShortcut, %A_ScriptDir%}\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk
+Run, %A_ScriptDir%}\main.ahk
