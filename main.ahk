@@ -158,9 +158,7 @@ $F12::
 #IfWinActive, ahk_exe bricscad.exe
 	#Esc::
 	;Win+Esc - save+close drawing
-		SendInput, {Alt}
-		SendInput, D
-		SendInput, Z
+		SendInput, open
 		SendInput, {Enter 2}
 		return
 #IfWinActive
