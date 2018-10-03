@@ -1,5 +1,4 @@
 ﻿#SingleInstance, force
-;Determines whether a script is allowed to run again when it is already running.
 
 I_Icon = %A_ScriptDir%\icons\gblue.ico
 Menu, Tray, Icon, %I_Icon%
@@ -15,36 +14,6 @@ Gui, 1:Add, Button, w180 gGUITl, Trendkurven löschen
 Gui, 1:Add, Button, x65 y270 h20 w70 gexit, Exit
 Gui, 1:Show, AutoSize NoActivate, %ScriptName%
 return
-
-~^s::
-	SetTitleMatchMode, 2
-	if WinActive(A_ScriptName)
-		{
-			SendInput, ^s
-			SplashTextOn,,25, Status, Script updated
-			Sleep,1000
-			SplashTextOff
-			Reload
-			Sleep 1000
-			MsgBox, 4,, The script was not reloaded, open it to edit?
-			IfMsgBox, Yes, Edit
-		}
-	else
-		SendInput, ^s
-	return
-
-/*
-F12::
-	KeyWait, F12
-	KeyWait, F12, D T0.2
-	if ErrorLevel
-		SendInput, {F12}
-	else
-		{
-			Gosub, GLT
-		}
-	return
-*/
 
 global break_g = 0
 
