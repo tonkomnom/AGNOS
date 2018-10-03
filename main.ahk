@@ -1,4 +1,4 @@
-﻿;V0.3.1
+﻿;V0.3.2
 #Persistent
 ;Keeps a script permanently running (that is, until the user closes it or ExitApp is encountered).
 #SingleInstance, force
@@ -26,9 +26,26 @@ Menu, Tray, Add, Neutrino GLT Fernbedienung, sRunremote
 Menu, Tray, Add, DatSiDoku, sDatSiDoku
 Menu, Tray, Add
 
-Menu, Tray, Add, A.G.N.O.S. anhalten, sPause
+Menu, Tray, Add, Erlkoenig anhalten, sPause
 Menu, Tray, Add, Beenden, sExit
 
+if FileExist(A_Startup "\main.lnk")
+	{
+		IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
+	}
+else
+	{
+		IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
+	}
+
+if FileExist(A_Startup "\datsidoku.lnk")
+	{
+		IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+	}
+else
+	{
+		IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+	}
 
 IniRead, vautomaininit, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
 	if vautomaininit = true
@@ -71,8 +88,8 @@ return
 #Pause::Suspend, Toggle
 ;Win+Pause suspends hotkeys
 
-;only used during development
 ~^s::
+;only used during development
 	SetTitleMatchMode, 2
 	if WinActive(A_ScriptName)
 		{
@@ -220,13 +237,13 @@ sautomain:
 			{
 				Menu, autostartsub, UnCheck, Erlkoenig
 				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
-				FileDelete, %A_Startup%\%A_ScriptName%.lnk
+				FileDelete, %A_Startup%\main.lnk
 			}
 		else
 			{
 				Menu, autostartsub, Check, Erlkoenig
 				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
-				FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\%A_ScriptName%.lnk
+				FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\main.lnk
 			}
 	return
 
@@ -259,7 +276,7 @@ sDatSiDoku:
 	return
 
 sPause:
-	menu, tray, ToggleCheck, A.G.N.O.S. anhalten
+	menu, tray, ToggleCheck, Erlkoenig anhalten
 	Suspend, Toggle
 	Pause, Toggle
 	return
