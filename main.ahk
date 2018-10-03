@@ -1,5 +1,4 @@
-﻿;V0.3.2
-#Persistent
+﻿#Persistent
 ;Keeps a script permanently running (that is, until the user closes it or ExitApp is encountered).
 #SingleInstance, force
 ;Determines whether a script is allowed to run again when it is already running.
@@ -286,7 +285,7 @@ sExit:
 gAbout:
 	Gui, 99:Destroy
 	Gui, 99:Add, Text, ,© Tonk Omnom
-	Gui, 99:Add, Text, ,Version V0.3.0, 2018-10-02
+	Gui, 99:Add, Text, ,Version V0.3.2, 2018-10-03
 	Gui, 99:Add, Text, cblue gGitlink, GitHub
 	Gui, 99:Add, Text,
 	Gui, 99:Show, AutoSize
