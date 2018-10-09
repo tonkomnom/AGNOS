@@ -285,7 +285,7 @@ sExit:
 gAbout:
 	Gui, 99:Destroy
 	Gui, 99:Add, Text, ,© Tonk Omnom
-	Gui, 99:Add, Text, ,Version V0.3.2, 2018-10-03
+	Gui, 99:Add, Text, ,Version V0.4.0, 2018-10-09
 	Gui, 99:Add, Text, cblue gGitlink, GitHub
 	Gui, 99:Add, Text,
 	Gui, 99:Show, AutoSize
