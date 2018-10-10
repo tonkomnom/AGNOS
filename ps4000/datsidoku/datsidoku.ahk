@@ -50,41 +50,31 @@ guiSichern:
 
 Sichern:
 	Gui, Submit
+	if (workedon)
+		{
+			vstatus := "NICHT fertig"
+		}
+	if (done)
+		{
+			vstatus := "FERTIG"
+		}
 	WinGet, win_id, ID, A
 	ControlGetText bar_text, ToolbarWindow324, ahk_id %win_id%
 	StringTrimLeft, currentPath, bar_text, 9
 	FormatTime, CurrentDateTime,, yyyy-MM-dd_HH-mm
 	FileDelete, %currentPath%\*abgelegt*.ps5
-	if (workedon)
-		{
-			FileAppend, , %currentPath%\%CurrentDateTime% letzte Sicherung abgelegt durch %A_UserName% - NICHT fertig.ps5
-				if ErrorLevel
-					MsgBox,, Fehler, Achtung, es wurde keine Datei erzeugt!
-				else
-					{
-					SplashTextOn,,25, Status, Datei wurde erzeugt.
-					Sleep, 750
-					SplashTextOff
-					Gui, Destroy
-					}
+	FileAppend, , %currentPath%\%CurrentDateTime% letzte Sicherung abgelegt durch %A_UserName% - %vstatus%.ps5
+		if ErrorLevel
+			MsgBox,, Fehler, Achtung, es wurde keine Datei erzeugt!
+		else
+			{
+				SplashTextOn,,25, Status, Datei wurde erzeugt.
+				Sleep, 750
+				SplashTextOff
+				Gui, Destroy
+			}
 			currentPath :=""
 			return
-		}
-	if (done)
-		{
-			FileAppend, , %currentPath%\%CurrentDateTime% letzte Sicherung abgelegt durch %A_UserName% - FERTIG.ps5
-				if ErrorLevel
-					MsgBox,, Fehler, Achtung, es wurde keine Datei erzeugt!
-				else
-					{
-					SplashTextOn,,25, Status, Datei wurde erzeugt.
-					Sleep, 750
-					SplashTextOff
-					Gui, Destroy
-					}
-			currentPath :=""
-			return
-		}
 	return
 
 
@@ -103,15 +93,15 @@ Herstellen:
 	StringTrimLeft, currentPath, bar_text, 9
 	FormatTime, CurrentDateTime,, yyyy-MM-dd_HH-mm
 	FileDelete, %currentPath%\*wiederhergestellt*.ps5
-	FileAppend, , %currentPath%\%CurrentDateTime% Achtung! Projekt wiederhergestellt von %A_UserName%.ps5
+	FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt wiederhergestellt von %A_UserName%.ps5
 		if ErrorLevel
 			MsgBox,, Fehler, Achtung, es wurde keine Datei erzeugt!
 		else
 			{
-			SplashTextOn,,25, Status, Datei wurde erzeugt.
-			Sleep, 750
-			SplashTextOff
-			Gui, Destroy
+				SplashTextOn,,25, Status, Datei wurde erzeugt.
+				Sleep, 750
+				SplashTextOff
+				Gui, Destroy
 			}
 	currentPath :=""
 	return
@@ -133,41 +123,31 @@ guiExplorer:
 
 Explorersub1:
 	Gui, Submit
+	if (workedon)
+		{
+			vstatus := "NICHT fertig"
+		}
+	if (done)
+		{
+			vstatus := "FERTIG"
+		}
 	WinGet, win_id, ID, A
 	ControlGetText bar_text, ToolbarWindow323, ahk_id %win_id%
 	StringTrimLeft, currentPath, bar_text, 9
 	FormatTime, CurrentDateTime,, yyyy-MM-dd_HH-mm
 	FileDelete, %currentPath%\*abgelegt*.ps5
-	if (workedon)
-		{
-			FileAppend, , %currentPath%\%CurrentDateTime% letzte Sicherung abgelegt durch %A_UserName% - NICHT fertig.ps5
-				if ErrorLevel
-					MsgBox,, Fehler, Achtung, es wurde keine Datei erzeugt!
-				else
-					{
-					SplashTextOn,,25, Status, Datei wurde erzeugt.
-					Sleep, 750
-					SplashTextOff
-					Gui, Destroy
-					}
+	FileAppend, , %currentPath%\%CurrentDateTime% letzte Sicherung abgelegt durch %A_UserName% - %vstatus%.ps5
+		if ErrorLevel
+			MsgBox,, Fehler, Achtung, es wurde keine Datei erzeugt!
+		else
+			{
+				SplashTextOn,,25, Status, Datei wurde erzeugt.
+				Sleep, 750
+				SplashTextOff
+				Gui, Destroy
+			}
 			currentPath :=""
 			return
-		}
-	if (done)
-		{
-			FileAppend, , %currentPath%\%CurrentDateTime% letzte Sicherung abgelegt durch %A_UserName% - FERTIG.ps5
-				if ErrorLevel
-					MsgBox,, Fehler, Achtung, es wurde keine Datei erzeugt!
-				else
-					{
-					SplashTextOn,,25, Status, Datei wurde erzeugt.
-					Sleep, 750
-					SplashTextOff
-					Gui, Destroy
-					}
-			currentPath :=""
-			return
-		}
 	return
 
 Explorersub2:
@@ -176,15 +156,15 @@ Explorersub2:
 	StringTrimLeft, currentPath, bar_text, 9
 	FormatTime, CurrentDateTime,, yyyy-MM-dd_HH-mm
 	FileDelete, %currentPath%\*wiederhergestellt*.ps5
-	FileAppend, , %currentPath%\%CurrentDateTime% Achtung! Projekt wiederhergestellt von %A_UserName%.ps5
+	FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt wiederhergestellt von %A_UserName%.ps5
 		if ErrorLevel
 			MsgBox,, Fehler, Achtung, es wurde keine Datei erzeugt!
 		else
 			{
-			SplashTextOn,,25, Status, Datei wurde erzeugt.
-			Sleep, 750
-			SplashTextOff
-			Gui, Destroy
+				SplashTextOn,,25, Status, Datei wurde erzeugt.
+				Sleep, 750
+				SplashTextOff
+				Gui, Destroy
 			}
 	currentPath :=""
 	return
@@ -200,15 +180,15 @@ Explorersub3:
 		else
 		{
 			FileDelete, %currentPath%\*übergeben*.ps5
-			FileAppend, , %currentPath%\%CurrentDateTime% Achtung! Projekt übergeben an %ausbuchen_name%.ps5
+			FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt übergeben an %ausbuchen_name%.ps5
 				if ErrorLevel
 					MsgBox,, Fehler!, Achtung, es wurde keine Datei erzeugt!
 				else
 					{
-					SplashTextOn,,25, Status, Datei wurde erzeugt.
-					Sleep, 750
-					SplashTextOff
-					Gui, Destroy
+						SplashTextOn,,25, Status, Datei wurde erzeugt.
+						Sleep, 750
+						SplashTextOff
+						Gui, Destroy
 					}
 			currentPath :=""
 			ausbuchen_name :=""
