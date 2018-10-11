@@ -15,13 +15,11 @@ Menu, Tray, Add, Info..., gAbout
 Menu, Tray, Add, Hilfe, sHelp
 Menu, Tray, Add
 
-Menu, autostartsub, Add, Erlkoenig, sautomain
-Menu, autostartsub, Add, DatSiDoku, sautodatsi
-Menu, Tray, Add, Autostart, :autostartsub
-Menu, Tray, Add
-
 Menu, options, Add, Tastaturkürzel aktiviert, stogglehk
+Menu, options, Add, Erlkoenig mit Windows starten, sautomain
+Menu, options, Add, DatSiDoku mit Windows starten, sautodatsi
 Menu, Tray, Add, Optionen, :options
+Menu, Tray, Add
 
 Menu, Tray, Add, EP/DP Zähler, sRunEPDP
 Menu, Tray, Add, Neutrino GLT Fernbedienung, sRunremote
@@ -52,21 +50,21 @@ else
 IniRead, vautomaininit, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
 	if vautomaininit = true
 		{
-			Menu, autostartsub, Check, Erlkoenig
+			Menu, options, Check, Erlkoenig mit Windows starten
 		}
 	else
 		{
-			Menu, autostartsub, UnCheck, Erlkoenig
+			Menu, options, UnCheck, Erlkoenig mit Windows starten
 		}
 
 IniRead, vautodatsiinit, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
 	if vautodatsiinit = true
 		{
-			Menu, autostartsub, Check, DatSiDoku
+			Menu, options, Check, DatSiDoku mit Windows starten
 		}
 	else
 		{
-			Menu, autostartsub, UnCheck, DatSiDoku
+			Menu, options, UnCheck, DatSiDoku mit Windows starten
 		}
 
 IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
@@ -261,13 +259,13 @@ sautomain:
 	IniRead, vautomain, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
 		if vautomain = true
 			{
-				Menu, autostartsub, UnCheck, Erlkoenig
+				Menu, options, UnCheck, Erlkoenig mit Windows starten
 				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
 				FileDelete, %A_Startup%\main.lnk
 			}
 		else
 			{
-				Menu, autostartsub, Check, Erlkoenig
+				Menu, options, Check, Erlkoenig mit Windows starten
 				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
 				FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\main.lnk
 			}
@@ -277,13 +275,13 @@ sautodatsi:
 	IniRead, vautodatsi, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
 		if vautodatsi = true
 			{
-				Menu, autostartsub, UnCheck, DatSiDoku
+				Menu, options, UnCheck, DatSiDoku mit Windows starten
 				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
 				FileDelete, %A_Startup%\datsidoku.lnk
 			}
 		else
 			{
-				Menu, autostartsub, Check, DatSiDoku
+				Menu, options, Check, DatSiDoku mit Windows starten
 				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
 				FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk
 			}
@@ -314,7 +312,7 @@ sExit:
 gAbout:
 	Gui, 99:Destroy
 	Gui, 99:Add, Text, ,© Tonk Omnom
-	Gui, 99:Add, Text, ,Version V0.4.0, 2018-10-09
+	Gui, 99:Add, Text, ,Version V0.5.0, 2018-10-11
 	Gui, 99:Add, Text, cblue gGitlink, GitHub
 	Gui, 99:Add, Text,
 	Gui, 99:Show, AutoSize
