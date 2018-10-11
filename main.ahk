@@ -20,6 +20,9 @@ Menu, autostartsub, Add, DatSiDoku, sautodatsi
 Menu, Tray, Add, Autostart, :autostartsub
 Menu, Tray, Add
 
+Menu, options, Add, Tastaturkürzel aktiviert, stogglehk
+Menu, Tray, Add, Optionen, :options
+
 Menu, Tray, Add, EP/DP Zähler, sRunEPDP
 Menu, Tray, Add, Neutrino GLT Fernbedienung, sRunremote
 Menu, Tray, Add, DatSiDoku, sDatSiDoku
@@ -66,6 +69,18 @@ IniRead, vautodatsiinit, %A_ScriptDir%\core\settings.ini, autostart, autostart_d
 			Menu, autostartsub, UnCheck, DatSiDoku
 		}
 
+IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
+	if vtogglehk = true
+		{
+			Menu, options, Check, Tastaturkürzel aktiviert
+		}
+	else
+		{
+			Menu, options, UnCheck, Tastaturkürzel aktiviert
+			Menu, options, Rename, Tastaturkürzel aktiviert, Tastaturkürzel deaktiviert
+			Hotkey, F10, Off
+		}
+
 Loop,
 	{
 		I_Icon = %A_ScriptDir%\core\icons\kblue.ico
@@ -80,12 +95,22 @@ Loop,
 	}
 return
 
-
-
-#ScrollLock::Pause, Toggle
-;Win+Pause pauses script
-#Pause::Suspend, Toggle
-;Win+Pause suspends hotkeys
+stogglehk:
+	Hotkey, F10, Toggle
+	IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
+		if vtogglehk = true
+			{
+				Menu, options, UnCheck, Tastaturkürzel aktiviert
+				Menu, options, Rename, Tastaturkürzel aktiviert, Tastaturkürzel deaktiviert
+				IniWrite, false, %A_ScriptDir%\core\settings.ini, hotkeys, active
+			}
+		else
+			{
+				Menu, options, Check, Tastaturkürzel deaktiviert
+				Menu, options, Rename, Tastaturkürzel deaktiviert, Tastaturkürzel aktiviert
+				IniWrite, true, %A_ScriptDir%\core\settings.ini, hotkeys, active
+			}
+	return
 
 ~^s::
 ;only used during development
@@ -104,6 +129,10 @@ return
 	else
 		Send, ^s
 	return
+
+F10::
+	MsgBox, , Title, Text,
+return
 
 $F12::
 	KeyWait, F12, T1.0
