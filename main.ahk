@@ -77,6 +77,20 @@ IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
 			Menu, options, UnCheck, Tastaturkürzel aktiviert
 			Menu, options, Rename, Tastaturkürzel aktiviert, Tastaturkürzel deaktiviert
 			Hotkey, F10, Off
+			Hotkey, IfWinActive, ahk_exe PS4000.exe
+			Hotkey, ^k, Off
+			Hotkey, IfWinActive, ahk_exe bricscad.exe
+			Hotkey, #Esc, Off
+			Hotkey, IfWinActive, ahk_exe phindows.ex_
+			Hotkey, ^z, Off
+			Hotkey, #Tab, Off
+			Hotkey, $F2, Off
+			Hotkey, ^Left, Off
+			Hotkey, ^Up, Off
+			Hotkey, ^Right, Off
+			Hotkey, ^Down, Off
+			Hotkey, +Left, Off
+			Hotkey, +Right, Off
 		}
 
 Loop,
@@ -95,6 +109,20 @@ return
 
 stogglehk:
 	Hotkey, F10, Toggle
+	Hotkey, IfWinActive, ahk_exe PS4000.exe
+	Hotkey, ^k, Toggle
+	Hotkey, IfWinActive, ahk_exe bricscad.exe
+	Hotkey, #Esc, Toggle
+	Hotkey, IfWinActive, ahk_exe phindows.ex_
+	Hotkey, ^z, Toggle
+	Hotkey, #Tab, Toggle
+	Hotkey, $F2, Toggle
+	Hotkey, ^Left, Toggle
+	Hotkey, ^Up, Toggle
+	Hotkey, ^Right, Toggle
+	Hotkey, ^Down, Toggle
+	Hotkey, +Left, Toggle
+	Hotkey, +Right, Toggle
 	IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
 		if vtogglehk = true
 			{
@@ -121,8 +149,7 @@ stogglehk:
 			SplashTextOff
 			Reload
 			Sleep 1000
-			MsgBox, 4,, Das Skript konnte nicht neu geladen werden, zum Editieren öffnen?
-			IfMsgBox, Yes, Edit
+			MsgBox,,, The script could not load!
 		}
 	else
 		Send, ^s
@@ -336,10 +363,11 @@ sExit:
 gAbout:
 	Gui, 99:Destroy
 	Gui, 99:Add, Text, ,© Tonk Omnom
-	Gui, 99:Add, Text, ,Version V0.5.0, 2018-10-11
-	Gui, 99:Add, Text, cblue gGitlink, GitHub
+	Gui, 99:Add, Text, ,Version V0.6.0, 2018-10-12
+	Gui, 99:Add, Text, cblue gGitlink, https://github.com/tonkomnom
 	Gui, 99:Add, Text,
-	Gui, 99:Show, AutoSize
+	Gui, 99: -MinimizeBox
+	Gui, 99:Show, AutoSize, Info
 	return
 
 Gitlink:
