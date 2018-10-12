@@ -1,10 +1,10 @@
 ﻿#SingleInstance, force
-SetWorkingDir %A_ScriptDir%
 
 I_Icon = %A_ScriptDir%\icons\dblue.ico
+Menu, Tray, NoStandard
 Menu, Tray, Icon, %I_Icon%
 Menu, Tray, Tip, DatSiDoku
-Menu, Tray, NoStandard
+
 Menu, Tray, Add, Sichern über PS4000, guiSichern
 Menu, Tray, Add, Wiederherstellen über PS4000, guiHerstellen
 Menu, Tray, Add, Ablage über Explorer, guiExplorer

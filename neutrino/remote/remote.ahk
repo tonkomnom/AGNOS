@@ -1,8 +1,11 @@
 ﻿#SingleInstance, force
 
 I_Icon = %A_ScriptDir%\icons\gblue.ico
+Menu, Tray, NoStandard
 Menu, Tray, Icon, %I_Icon%
-Menu, Tray, Tip, GLT Ferrnbedienung
+Menu, Tray, Tip, GLT Fernbedienung
+
+Menu, Tray, Add, Beenden, sExit
 
 Gui, 1:Destroy
 Gui, 1:+AlwaysOnTop
@@ -11,8 +14,8 @@ Gui, 1:Add, Button, w180 gGUIsm1, Störmeldung invertieren - SM=1
 Gui, 1:Add, Text, w180 h2 +0x10
 Gui, 1:Add, Button, w180 gGUITa, Trendkurven anlegen
 Gui, 1:Add, Button, w180 gGUITl, Trendkurven löschen
-Gui, 1:Add, Button, x65 y270 h20 w70 gexit, Exit
-Gui, 1:Show, AutoSize NoActivate, %ScriptName%
+Gui, 1:Add, Button, x65 y255 h20 w70 gexit, Schließen
+Gui, 1:Show, AutoSize NoActivate, GLT Fernbedienung
 return
 
 global break_g = 0
@@ -440,36 +443,38 @@ OKRadioTl:
 
 
 zurueck:
-Gui, 2:Destroy
-Gui, 3:Destroy
-Gui, 4:Destroy
-Gui, 5:Destroy
-Gui, 1:Show
-return
-
-GuiClose:
-Gui, 1:Destroy
-return
+	Gui, 2:Destroy
+	Gui, 3:Destroy
+	Gui, 4:Destroy
+	Gui, 5:Destroy
+	Gui, 1:Show
+	return
 
 2GuiClose:
-Gui, 2:Destroy
-Gui, 1:Show
-return
+	Gui, 2:Destroy
+	Gui, 1:Show
+	return
 
 3GuiClose:
-Gui, 3:Destroy
-Gui, 1:Show
-return
+	Gui, 3:Destroy
+	Gui, 1:Show
+	return
 
 4GuiClose:
-Gui, 4:Destroy
-Gui, 1:Show
-return
+	Gui, 4:Destroy
+	Gui, 1:Show
+	return
 
 5GuiClose:
-Gui, 5:Destroy
-Gui, 1:Show
-return
+	Gui, 5:Destroy
+	Gui, 1:Show
+	return
+
+GuiClose:
+	ExitApp
+
+sExit:
+	ExitApp
 
 exit:
-Exitapp
+	Exitapp

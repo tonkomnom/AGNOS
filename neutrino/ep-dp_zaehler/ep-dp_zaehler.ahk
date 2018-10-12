@@ -1,15 +1,16 @@
 ﻿#SingleInstance, force
-;Determines whether a script is allowed to run again when it is already running.
 
 I_Icon = %A_ScriptDir%\icons\zblue.ico
+Menu, Tray, NoStandard
 Menu, Tray, Icon, %I_Icon%
 Menu, Tray, Tip, EP/DP Zähler
+
+Menu, Tray, Add, Beenden, sExit
 
 Gui, Show, w200 h200, EP/DP Zähler
 Gui, Add, Button, x40 y5 h20 w120 gep, Einblendpunkte
 Gui, Add, Button, x40 h20 w120 gdp, Datenpunkte
-Gui, Add, Button, x65 y135 h20 w70 greload, Neu laden
-Gui, Add, Button, x65 h20 w70 gexit, Exit
+Gui, Add, Button, x65 y150 h20 w70 gexit, Schließen
 return
 
 ep:
@@ -87,11 +88,11 @@ dp:
 	
 	return
 
-reload:
-Reload
+GuiClose:
+	ExitApp
+
+sExit:
+	ExitApp
 
 exit:
-ExitApp
-
-GuiClose: 
-ExitApp
+	Exitapp
