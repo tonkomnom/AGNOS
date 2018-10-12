@@ -288,15 +288,39 @@ sautodatsi:
 	return
 
 sRunEPDP:
-	Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
+	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
+		{
+			Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.exe
+		}
+	else
+		{
+			Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
+		}
 	return
 
 sRunremote:
-	Run, %A_ScriptDir%\neutrino\remote\remote.ahk
+	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
+		{
+			Run, %A_ScriptDir%\neutrino\remote\remote.exe
+		}
+	else
+		{
+			Run, %A_ScriptDir%\neutrino\remote\remote.ahk
+		}
 	return
 
 sDatSiDoku:
-	Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk
+	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
+		{
+			Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.exe
+		}
+	else
+		{
+			Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk
+		}
 	return
 
 sPause:
