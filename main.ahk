@@ -25,12 +25,14 @@ Menu, options, Add, DatSiDoku mit Windows starten, sautodatsi
 Menu, Tray, Add, Optionen, :options
 Menu, Tray, Add
 
+Menu, Tray, Add, Autovervollständigung, sRunhotstringgen
 Menu, Tray, Add, EP/DP Zähler, sRunEPDP
 Menu, Tray, Add, Neutrino GLT Fernbedienung, sRunremote
 Menu, Tray, Add, DatSiDoku, sDatSiDoku
 Menu, Tray, Add
 
 Menu, Tray, Add, Beenden, sExit
+
 
 if FileExist(A_Startup "\hotstringgen.lnk")
 	{
@@ -72,14 +74,23 @@ IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
 			Suspend, On
 		}
 
-IniRead, vautohotstringgeninit, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-	if vautohotstringgeninit = true
+RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
 		{
-			Menu, options, Check, Autovervollständigung mit Windows starten
+			Menu, options, Disable, Autovervollständigung mit Windows starten
+			Menu, Tray, Disable, Autovervollständigung
 		}
 	else
 		{
-			Menu, options, UnCheck, Autovervollständigung mit Windows starten
+			IniRead, vautohotstringgeninit, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+				if vautohotstringgeninit = true
+					{
+						Menu, options, Check, Autovervollständigung mit Windows starten
+					}
+				else
+					{
+						Menu, options, UnCheck, Autovervollständigung mit Windows starten
+					}
 		}
 
 IniRead, vautomaininit, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
@@ -219,6 +230,18 @@ sautodatsi:
 		}
 	return
 
+sRunhotstringgen:
+	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
+		{
+			Run, %A_ScriptDir%\core\hotstringgen.exe
+		}
+	else
+		{
+			Run, %A_ScriptDir%\core\hotstringgen.ahk
+		}
+	return
+
 sRunEPDP:
 	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
 	if (dir = "")
@@ -258,7 +281,7 @@ sDatSiDoku:
 gAbout:
 	Gui, 99:Destroy
 	Gui, 99:Add, Text, ,© Tonk Omnom
-	Gui, 99:Add, Text, ,Version V0.6.1, 2018-10-14
+	Gui, 99:Add, Text, ,Version V0.7.0, 2018-10-14
 	Gui, 99:Add, Text, cblue gGitlink, https://github.com/tonkomnom
 	Gui, 99:Add, Text,
 	Gui, 99: -MinimizeBox
@@ -421,5 +444,3 @@ $F12::
 	+Right::SendInput, {AltDown}bc{AltUp}
 	;Shift+Right - rotate right
 #IfWinActive
-
-
