@@ -1,4 +1,4 @@
-#Persistent
+﻿#Persistent
 ;Keeps a script permanently running (that is, until the user closes it or ExitApp is encountered).
 #SingleInstance, force
 ;Determines whether a script is allowed to run again when it is already running.
@@ -6,6 +6,9 @@ SendMode Input
 ;Switches to the SendInput method for Send, SendRaw, Click, and MouseMove/Click/Drag.
 SetWorkingDir %A_ScriptDir%
 ;Script unconditionally uses its own folder as its working directory.
+
+SetBatchLines, -1
+SetMouseDelay, -1, -1
 
 Menu, Tray, Tip, Erlkönig
 ;Menu, Tray, NoStandard
@@ -365,7 +368,7 @@ sExit:
 gAbout:
 	Gui, 99:Destroy
 	Gui, 99:Add, Text, ,© Tonk Omnom
-	Gui, 99:Add, Text, ,Version V0.6.0, 2018-10-12
+	Gui, 99:Add, Text, ,Version V0.6.1, 2018-10-14
 	Gui, 99:Add, Text, cblue gGitlink, https://github.com/tonkomnom
 	Gui, 99:Add, Text,
 	Gui, 99: -MinimizeBox
