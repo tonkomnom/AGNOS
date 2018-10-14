@@ -17,7 +17,8 @@ ep:
 	FileSelectFile, SelectedFile, , C:\Users\%A_UserName%\Desktop, GLT Stapeldruck auswählen, *.pdf
 		if (SelectedFile = "")
 			{
-				MsgBox, , Fehler!,Sie haben keine Datei ausgewählt.
+				SoundPlay, *16
+				MsgBox, 16, Fehler!,Sie haben keine Datei ausgewählt.
 				return
 			}
 		FileCopy, %SelectedFile%, %A_ScriptDir%\temp_ep.pdf
@@ -42,7 +43,8 @@ ep:
 		if var_ep > 0
 			MsgBox, , EP,Gesamtzahl aller Einblendpunkte: %var_ep%
 		else
-			MsgBox, , Fehler!, Es konnten keine Einblendpunkte gefunden werden,`nvergewissern Sie sich dass Sie die richtige`nDatei ausgewählt hatten.
+			SoundPlay, *16
+			MsgBox, 16, Fehler!, Es konnten keine Einblendpunkte gefunden werden,`nvergewissern Sie sich dass Sie die richtige`nDatei ausgewählt hatten.
 
 	
 		FileDelete, %A_ScriptDir%\temp_ep.txt
@@ -55,7 +57,8 @@ dp:
 	FileSelectFile, SelectedFile, , C:\Users\%A_UserName%\Desktop, GLT Stapeldruck auswählen, *.pdf
 		if (SelectedFile = "")
 			{
-				MsgBox, , Fehler!, Sie haben keine Datei ausgewählt.
+				SoundPlay, *16
+				MsgBox, 16, Fehler!, Sie haben keine Datei ausgewählt.
 				return
 			}
 		FileCopy, %SelectedFile%, %A_ScriptDir%\temp_dp.pdf
@@ -80,7 +83,8 @@ dp:
 		if var_dp > 0
 			MsgBox, , EP,Gesamtzahl aller Informationspunkte: %var_dp%
 		else
-			MsgBox, , Fehler!, Es konnten keine Informationspunkte gefunden werden,`nvergewissern Sie sich dass Sie die richtige`nDatei ausgewählt hatten.
+			SoundPlay, *16
+			MsgBox, 16, Fehler!, Es konnten keine Informationspunkte gefunden werden,`nvergewissern Sie sich dass Sie die richtige`nDatei ausgewählt hatten.
 	
 		FileDelete, %A_ScriptDir%\temp_dp.txt
 		FileDelete, %A_ScriptDir%\temp_dp.pdf
