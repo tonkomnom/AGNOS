@@ -32,6 +32,15 @@ Menu, Tray, Add
 
 Menu, Tray, Add, Beenden, sExit
 
+if FileExist(A_Startup "\hotstringgen.lnk")
+	{
+		IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+	}
+else
+	{
+		IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+	}
+
 if FileExist(A_Startup "\main.lnk")
 	{
 		IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
@@ -50,14 +59,28 @@ else
 		IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
 	}
 
-if FileExist(A_Startup "\hotstringgen.lnk")
-	{
-		IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-	}
-else
-	{
-		IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-	}
+
+IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
+	if vtogglehk = true
+		{
+			Menu, options, Check, Tastaturkürzel aktiviert
+		}
+	else
+		{
+			Menu, options, UnCheck, Tastaturkürzel aktiviert
+			Menu, options, Rename, Tastaturkürzel aktiviert, Tastaturkürzel deaktiviert
+			Suspend, On
+		}
+
+IniRead, vautohotstringgeninit, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+	if vautohotstringgeninit = true
+		{
+			Menu, options, Check, Autovervollständigung mit Windows starten
+		}
+	else
+		{
+			Menu, options, UnCheck, Autovervollständigung mit Windows starten
+		}
 
 IniRead, vautomaininit, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
 	if vautomaininit = true
@@ -77,28 +100,6 @@ IniRead, vautodatsiinit, %A_ScriptDir%\core\settings.ini, autostart, autostart_d
 	else
 		{
 			Menu, options, UnCheck, DatSiDoku mit Windows starten
-		}
-
-IniRead, vautohotstringgeninit, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-	if vautohotstringgeninit = true
-		{
-			Menu, options, Check, Autovervollständigung mit Windows starten
-		}
-	else
-		{
-			Menu, options, UnCheck, Autovervollständigung mit Windows starten
-		}
-
-IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
-	if vtogglehk = true
-		{
-			Menu, options, Check, Tastaturkürzel aktiviert
-		}
-	else
-		{
-			Menu, options, UnCheck, Tastaturkürzel aktiviert
-			Menu, options, Rename, Tastaturkürzel aktiviert, Tastaturkürzel deaktiviert
-			Suspend, On
 		}
 
 Loop,
@@ -134,18 +135,37 @@ stogglehk:
 
 sautohotstringgen:
 	IniRead, vautohotstringgen, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-		if vautohotstringgen = true
-			{
-				Menu, options, UnCheck, Autovervollständigung mit Windows starten
-				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-				FileDelete, %A_Startup%\hotstringgen.lnk
-			}
-		else
-			{
-				Menu, options, Check, Autovervollständigung mit Windows starten
-				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-				FileCreateShortcut, %A_ScriptDir%\core\hotstringgen.ahk, %A_Startup%\hotstringgen.lnk
-			}
+	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
+		{
+			if vautohotstringgen = true
+				{
+					Menu, options, UnCheck, Autovervollständigung mit Windows starten
+					IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+					FileDelete, %A_Startup%\hotstringgen.lnk
+				}
+			else
+				{
+					Menu, options, Check, Autovervollständigung mit Windows starten
+					IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+					FileCreateShortcut, %A_ScriptDir%\core\hotstringgen.exe, %A_Startup%\hotstringgen.lnk
+				}
+		}
+	else
+		{
+			if vautohotstringgen = true
+				{
+					Menu, options, UnCheck, Autovervollständigung mit Windows starten
+					IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+					FileDelete, %A_Startup%\hotstringgen.lnk
+				}
+			else
+				{
+					Menu, options, Check, Autovervollständigung mit Windows starten
+					IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+					FileCreateShortcut, %A_ScriptDir%\core\hotstringgen.ahk, %A_Startup%\hotstringgen.lnk
+				}
+		}
 	return
 
 sautomain:
@@ -166,18 +186,37 @@ sautomain:
 
 sautodatsi:
 	IniRead, vautodatsi, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
-		if vautodatsi = true
-			{
-				Menu, options, UnCheck, DatSiDoku mit Windows starten
-				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
-				FileDelete, %A_Startup%\datsidoku.lnk
-			}
-		else
-			{
-				Menu, options, Check, DatSiDoku mit Windows starten
-				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
-				FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk
-			}
+	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
+		{
+			if vautodatsi = true
+				{
+					Menu, options, UnCheck, DatSiDoku mit Windows starten
+					IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+					FileDelete, %A_Startup%\datsidoku.lnk
+				}
+			else
+				{
+					Menu, options, Check, DatSiDoku mit Windows starten
+					IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+					FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk
+				}
+		}
+	else
+		{
+			if vautodatsi = true
+				{
+					Menu, options, UnCheck, DatSiDoku mit Windows starten
+					IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+					FileDelete, %A_Startup%\datsidoku.lnk
+				}
+			else
+				{
+					Menu, options, Check, DatSiDoku mit Windows starten
+					IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+					FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.exe, %A_Startup%\datsidoku.lnk
+				}
+		}
 	return
 
 sRunEPDP:
