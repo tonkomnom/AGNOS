@@ -132,23 +132,113 @@ stogglehk:
 			}
 	return
 
-stogglehs:
-	Hotkey, !h, Toggle
-	IniRead, vtogglehs, %A_ScriptDir%\core\settings.ini, hotstrings, active
-		if vtogglehs = true
+sautohotstringgen:
+	IniRead, vautohotstringgen, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+		if vautohotstringgen = true
 			{
-				Menu, options, UnCheck, Autovervollständigung aktiviert
-				Menu, options, Rename, Autovervollständigung aktiviert, Autovervollständigung deaktiviert
-				IniWrite, false, %A_ScriptDir%\core\settings.ini, hotstrings, active
+				Menu, options, UnCheck, Autovervollständigung mit Windows starten
+				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+				FileDelete, %A_Startup%\hotstringgen.lnk
 			}
 		else
 			{
-				Menu, options, Check, Autovervollständigung deaktiviert
-				Menu, options, Rename, Autovervollständigung deaktiviert, Autovervollständigung aktiviert
-				IniWrite, true, %A_ScriptDir%\core\settings.ini, hotstrings, active
+				Menu, options, Check, Autovervollständigung mit Windows starten
+				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+				FileCreateShortcut, %A_ScriptDir%\core\hotstringgen.ahk, %A_Startup%\hotstringgen.lnk
 			}
 	return
 
+sautomain:
+	IniRead, vautomain, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
+		if vautomain = true
+			{
+				Menu, options, UnCheck, Erlkoenig mit Windows starten
+				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
+				FileDelete, %A_Startup%\main.lnk
+			}
+		else
+			{
+				Menu, options, Check, Erlkoenig mit Windows starten
+				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
+				FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\main.lnk
+			}
+	return
+
+sautodatsi:
+	IniRead, vautodatsi, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+		if vautodatsi = true
+			{
+				Menu, options, UnCheck, DatSiDoku mit Windows starten
+				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+				FileDelete, %A_Startup%\datsidoku.lnk
+			}
+		else
+			{
+				Menu, options, Check, DatSiDoku mit Windows starten
+				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+				FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk
+			}
+	return
+
+sRunEPDP:
+	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
+		{
+			Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.exe
+		}
+	else
+		{
+			Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
+		}
+	return
+
+sRunremote:
+	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
+		{
+			Run, %A_ScriptDir%\neutrino\remote\remote.exe
+		}
+	else
+		{
+			Run, %A_ScriptDir%\neutrino\remote\remote.ahk
+		}
+	return
+
+sDatSiDoku:
+	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
+		{
+			Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.exe
+		}
+	else
+		{
+			Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk
+		}
+	return
+
+gAbout:
+	Gui, 99:Destroy
+	Gui, 99:Add, Text, ,© Tonk Omnom
+	Gui, 99:Add, Text, ,Version V0.6.1, 2018-10-14
+	Gui, 99:Add, Text, cblue gGitlink, https://github.com/tonkomnom
+	Gui, 99:Add, Text,
+	Gui, 99: -MinimizeBox
+	Gui, 99:Show, AutoSize, Info
+	return
+
+	Gitlink:
+		Run, https://github.com/tonkomnom/erlkoenig
+		return
+
+sHelp:
+	Run, https://github.com/tonkomnom/erlkoenig
+	return
+
+sExit:
+	ExitApp
+	return
+
+;hotkeys
 ~^s::
 ;only used during development
 	SetTitleMatchMode, 2
@@ -294,108 +384,3 @@ $F12::
 #IfWinActive
 
 
-sautomain:
-	IniRead, vautomain, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
-		if vautomain = true
-			{
-				Menu, options, UnCheck, Erlkoenig mit Windows starten
-				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
-				FileDelete, %A_Startup%\main.lnk
-			}
-		else
-			{
-				Menu, options, Check, Erlkoenig mit Windows starten
-				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
-				FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\main.lnk
-			}
-	return
-
-sautodatsi:
-	IniRead, vautodatsi, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
-		if vautodatsi = true
-			{
-				Menu, options, UnCheck, DatSiDoku mit Windows starten
-				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
-				FileDelete, %A_Startup%\datsidoku.lnk
-			}
-		else
-			{
-				Menu, options, Check, DatSiDoku mit Windows starten
-				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
-				FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk
-			}
-	return
-
-sautohotstringgen:
-	IniRead, vautohotstringgen, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-		if vautohotstringgen = true
-			{
-				Menu, options, UnCheck, Autovervollständigung mit Windows starten
-				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-				FileDelete, %A_Startup%\hotstringgen.lnk
-			}
-		else
-			{
-				Menu, options, Check, Autovervollständigung mit Windows starten
-				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-				FileCreateShortcut, %A_ScriptDir%\core\hotstringgen.ahk, %A_Startup%\hotstringgen.lnk
-			}
-	return
-
-sRunEPDP:
-	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
-	if (dir = "")
-		{
-			Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.exe
-		}
-	else
-		{
-			Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
-		}
-	return
-
-sRunremote:
-	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
-	if (dir = "")
-		{
-			Run, %A_ScriptDir%\neutrino\remote\remote.exe
-		}
-	else
-		{
-			Run, %A_ScriptDir%\neutrino\remote\remote.ahk
-		}
-	return
-
-sDatSiDoku:
-	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
-	if (dir = "")
-		{
-			Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.exe
-		}
-	else
-		{
-			Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk
-		}
-	return
-
-sExit:
-	ExitApp
-	return
-
-gAbout:
-	Gui, 99:Destroy
-	Gui, 99:Add, Text, ,© Tonk Omnom
-	Gui, 99:Add, Text, ,Version V0.6.1, 2018-10-14
-	Gui, 99:Add, Text, cblue gGitlink, https://github.com/tonkomnom
-	Gui, 99:Add, Text,
-	Gui, 99: -MinimizeBox
-	Gui, 99:Show, AutoSize, Info
-	return
-
-Gitlink:
-	Run, https://github.com/tonkomnom/erlkoenig
-	return
-
-sHelp:
-	Run, https://github.com/tonkomnom/erlkoenig
-	return
