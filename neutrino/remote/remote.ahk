@@ -40,7 +40,7 @@ GUIsm0:
 	Gui, 2:Add, Button, x40 h20 w120 gOKRadioS0, OK
 	Gui, 2:Add, Button, x40 h20 w120 gAbbrechen, Abbrechen
 	Gui, 2:Add, Button, x65 y235 h20 w70 gzurueck, Zurück
-	Gui, 2:Show, % "x" X1 "y" Y1 w200 h300 NoActivate, %ScriptName%
+	Gui, 2:Show, % "x" X1 "y" Y1 w200 h300 NoActivate, GLT Fernbedienung
 	return
 
 OKRadioS0:
@@ -147,7 +147,7 @@ GUIsm1:
 	Gui, 3:Add, Button, x40 h20 w120 gOKRadioS1, OK
 	Gui, 3:Add, Button, x40 h20 w120 gAbbrechen, Abbrechen
 	Gui, 3:Add, Button, x65 y235 h20 w70 gzurueck, Zurück
-	Gui, 3:Show, % "x" X1 "y" Y1 w200 h300 NoActivate, %ScriptName%
+	Gui, 3:Show, % "x" X1 "y" Y1 w200 h300 NoActivate, GLT Fernbedienung
 	return
 
 OKRadioS1:
@@ -254,7 +254,7 @@ GUITa:
 	Gui, 4:Add, Button, x40 h20 w120 gOKRadioTa, OK
 	Gui, 4:Add, Button, x40 h20 w120 gAbbrechen, Abbrechen
 	Gui, 4:Add, Button, x65 y235 h20 w70 gzurueck, Zurück
-	Gui, 4:Show, % "x" X1 "y" Y1 w200 h300 NoActivate, %ScriptName%
+	Gui, 4:Show, % "x" X1 "y" Y1 w200 h300 NoActivate, GLT Fernbedienung
 	return
 
 OKRadioTa:
@@ -352,7 +352,7 @@ GUITl:
 	Gui, 5:Add, Button, x40 h20 w120 gOKRadioTl, OK
 	Gui, 5:Add, Button, x40 h20 w120 gAbbrechen, Abbrechen
 	Gui, 5:Add, Button, x65 y235 h20 w70 gzurueck, Zurück
-	Gui, 5:Show, % "x" X1 "y" Y1 w200 h300 NoActivate, %ScriptName%
+	Gui, 5:Show, % "x" X1 "y" Y1 w200 h300 NoActivate, GLT Fernbedienung
 	return
 
 OKRadioTl:
