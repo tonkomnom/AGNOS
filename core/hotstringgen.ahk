@@ -1,0 +1,3 @@
+﻿#SingleInstance, force
+
+!h::h
