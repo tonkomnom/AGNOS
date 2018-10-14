@@ -1,4 +1,4 @@
-﻿#Persistent
+#Persistent
 ;Keeps a script permanently running (that is, until the user closes it or ExitApp is encountered).
 #SingleInstance, force
 ;Determines whether a script is allowed to run again when it is already running.
@@ -91,6 +91,7 @@ IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
 			Hotkey, ^Down, Off
 			Hotkey, +Left, Off
 			Hotkey, +Right, Off
+			Hotkey, IfWinActive
 		}
 
 Loop,
@@ -123,6 +124,7 @@ stogglehk:
 	Hotkey, ^Down, Toggle
 	Hotkey, +Left, Toggle
 	Hotkey, +Right, Toggle
+	Hotkey, IfWinActive
 	IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
 		if vtogglehk = true
 			{
