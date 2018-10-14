@@ -30,7 +30,6 @@ Menu, Tray, Add, Neutrino GLT Fernbedienung, sRunremote
 Menu, Tray, Add, DatSiDoku, sDatSiDoku
 Menu, Tray, Add
 
-Menu, Tray, Add, Erlkoenig anhalten, sPause
 Menu, Tray, Add, Beenden, sExit
 
 if FileExist(A_Startup "\main.lnk")
@@ -80,22 +79,7 @@ IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
 		{
 			Menu, options, UnCheck, Tastaturkürzel aktiviert
 			Menu, options, Rename, Tastaturkürzel aktiviert, Tastaturkürzel deaktiviert
-			Hotkey, F10, Off
-			Hotkey, IfWinActive, ahk_exe PS4000.exe
-			Hotkey, ^k, Off
-			Hotkey, IfWinActive, ahk_exe bricscad.exe
-			Hotkey, #Esc, Off
-			Hotkey, IfWinActive, ahk_exe phindows.ex_
-			Hotkey, ^z, Off
-			Hotkey, #Tab, Off
-			Hotkey, $F2, Off
-			Hotkey, ^Left, Off
-			Hotkey, ^Up, Off
-			Hotkey, ^Right, Off
-			Hotkey, ^Down, Off
-			Hotkey, +Left, Off
-			Hotkey, +Right, Off
-			Hotkey, IfWinActive
+			Suspend, On
 		}
 
 IniRead, vtogglehs, %A_ScriptDir%\core\settings.ini, hotstrings, active
@@ -134,22 +118,7 @@ Loop,
 return
 
 stogglehk:
-	Hotkey, F10, Toggle
-	Hotkey, IfWinActive, ahk_exe PS4000.exe
-	Hotkey, ^k, Toggle
-	Hotkey, IfWinActive, ahk_exe bricscad.exe
-	Hotkey, #Esc, Toggle
-	Hotkey, IfWinActive, ahk_exe phindows.ex_
-	Hotkey, ^z, Toggle
-	Hotkey, #Tab, Toggle
-	Hotkey, $F2, Toggle
-	Hotkey, ^Left, Toggle
-	Hotkey, ^Up, Toggle
-	Hotkey, ^Right, Toggle
-	Hotkey, ^Down, Toggle
-	Hotkey, +Left, Toggle
-	Hotkey, +Right, Toggle
-	Hotkey, IfWinActive
+	Suspend, Toggle
 	IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
 		if vtogglehk = true
 			{
@@ -204,6 +173,7 @@ F10::
 return
 
 $F12::
+	Suspend, Permit
 	KeyWait, F12, T1.0
 		if ErrorLevel
 			{
@@ -392,12 +362,6 @@ sDatSiDoku:
 		{
 			Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk
 		}
-	return
-
-sPause:
-	menu, tray, ToggleCheck, Erlkoenig anhalten
-	Suspend, Toggle
-	Pause, Toggle
 	return
 
 sExit:
