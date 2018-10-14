@@ -1,4 +1,4 @@
-#Persistent
+﻿#Persistent
 ;Keeps a script permanently running (that is, until the user closes it or ExitApp is encountered).
 #SingleInstance, force
 ;Determines whether a script is allowed to run again when it is already running.
@@ -19,6 +19,7 @@ Menu, Tray, Add, Hilfe, sHelp
 Menu, Tray, Add
 
 Menu, options, Add, Tastaturkürzel aktiviert, stogglehk
+Menu, options, Add, Autovervollständigung aktiviert, stogglehs
 Menu, options, Add, Erlkoenig mit Windows starten, sautomain
 Menu, options, Add, DatSiDoku mit Windows starten, sautodatsi
 Menu, Tray, Add, Optionen, :options
@@ -97,6 +98,27 @@ IniRead, vtogglehk, %A_ScriptDir%\core\settings.ini, hotkeys, active
 			Hotkey, IfWinActive
 		}
 
+IniRead, vtogglehs, %A_ScriptDir%\core\settings.ini, hotstrings, active
+	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
+		{
+			Menu, options, Disable, Autovervollständigung aktiviert
+			Menu, options, Rename, Autovervollständigung aktiviert, Autovervollständigung deaktiviert
+		}
+	else
+		{
+			if vtogglehs = true
+				{
+					Menu, options, Check, Autovervollständigung aktiviert
+				}
+			else
+				{
+					Menu, options, UnCheck, Autovervollständigung aktiviert
+					Menu, options, Rename, Autovervollständigung aktiviert, Autovervollständigung deaktiviert
+					Hotkey, !h, Off
+				}
+		}
+
 Loop,
 	{
 		I_Icon = %A_ScriptDir%\core\icons\kblue.ico
@@ -140,6 +162,23 @@ stogglehk:
 				Menu, options, Check, Tastaturkürzel deaktiviert
 				Menu, options, Rename, Tastaturkürzel deaktiviert, Tastaturkürzel aktiviert
 				IniWrite, true, %A_ScriptDir%\core\settings.ini, hotkeys, active
+			}
+	return
+
+stogglehs:
+	Hotkey, !h, Toggle
+	IniRead, vtogglehs, %A_ScriptDir%\core\settings.ini, hotstrings, active
+		if vtogglehs = true
+			{
+				Menu, options, UnCheck, Autovervollständigung aktiviert
+				Menu, options, Rename, Autovervollständigung aktiviert, Autovervollständigung deaktiviert
+				IniWrite, false, %A_ScriptDir%\core\settings.ini, hotstrings, active
+			}
+		else
+			{
+				Menu, options, Check, Autovervollständigung deaktiviert
+				Menu, options, Rename, Autovervollständigung deaktiviert, Autovervollständigung aktiviert
+				IniWrite, true, %A_ScriptDir%\core\settings.ini, hotstrings, active
 			}
 	return
 
@@ -382,3 +421,42 @@ Gitlink:
 sHelp:
 	Run, https://github.com/tonkomnom/erlkoenig
 	return
+
+;any new code needs to go above this line
+!h::
+	AutoTrim Off
+	ClipboardOld = %ClipboardAll%
+	Clipboard = 
+	Send ^c
+	ClipWait 1
+		if ErrorLevel
+			return
+	StringReplace, Hotstring, Clipboard, ``, ````, All
+	StringReplace, Hotstring, Hotstring, `r`n, ``r, All
+	StringReplace, Hotstring, Hotstring, `n, ``r, All
+	StringReplace, Hotstring, Hotstring, %A_Tab%, ``t, All
+	StringReplace, Hotstring, Hotstring, `;, ```;, All
+	Clipboard = %ClipboardOld%
+	SetTimer, MoveCaret, 10
+	InputBox, Hotstring, New Hotstring, Type your abreviation at the indicated insertion point. You can also edit the replacement text if you wish.`n`nExample entry: :*R:btw`::by the way,,,,,,,, :*R:`::%Hotstring%
+		if ErrorLevel
+			return
+	IfInString, Hotstring, :*R`:::
+		{
+			MsgBox You didn't provide an abbreviation. The hotstring has not been added.
+			return
+		}
+	FileAppend, `n%Hotstring%, %A_ScriptFullPath%
+	Reload
+	Sleep 200
+	MsgBox, 4, , The hotstring just added appears to be improperly formatted.  Would you like to open the script for editing? Note that the bad hotstring is at the bottom of the script.
+	IfMsgBox, Yes, Edit
+	return
+
+	MoveCaret:
+	IfWinNotActive, New Hotstring
+	    return
+	Send {Home}{Right 4}
+	SetTimer, MoveCaret, Off
+	return
+
