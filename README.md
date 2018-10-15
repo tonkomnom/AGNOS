@@ -12,36 +12,40 @@ Ich bin jederzeit für feedback, Vorschläge und Wünsche offen. Jeglicher code 
 
 Erreichbar bin ich telefonisch, per Email, oder über Microsoft Teams - Email Adresse sieht man nach Anmeldung auf GitHub [hier](https://github.com/tonkomnom "Tonk's GitHub Profil"), alternative Kontaktdaten gebe ich auf Anfrage heraus.
 
+## Allgemein
+
+## Tastaturkürzel
 
 ## PS4000 Datensicherungs-Dokumentation (DatSiDoku)
-Dieses Program dient dazu PS4000 Datensicherungen besser und einfacher zu dokumentieren und nachzuverfolgen. Beim erstmaligen starten wird ein Autostart Eintrag angelegt, es muss somit nur ein einziges Mal die \*.exe ausgeführt werden. Das Programm startet entweder automatisch beim Starten einer Sicherung oder Wiederherstellung oder über das Rechtsklick Menü des Taskleistensymbols. Es legt entsprechend des Vorgangs eine Datei mit aktuellem Datum, Art des Vorgangs und Name des Nutzers ab. Diese Datei hat eine \*.ps5 Endung, ist somit auch in PS4000 sichtbar (im Gegensatz zu einer \*.txt Datei). Die Option "Ablage über Explorer" ermöglicht es die Datei für jemanden auszubuchen und deren Namen zu hinterlegen.
+Dieses Program dient dazu PS4000 Datensicherungen besser und einfacher zu dokumentieren und nachzuverfolgen. Das Programm startet entweder automatisch beim Starten einer Sicherung oder Wiederherstellung oder über das Rechtsklick Menü des Taskleistensymbols. Es legt entsprechend des Vorgangs eine Datei mit aktuellem Datum, Art des Vorgangs und Name des Nutzers ab. Diese Datei hat eine \*.ps5 Endung, ist somit auch in PS4000 sichtbar (im Gegensatz zu einer \*.txt Datei). Die Option "Ablage über Explorer" ermöglicht es die Datei für jemanden auszubuchen und deren Namen zu hinterlegen.
 
 Leider ist es (im Moment) nicht möglich das Programm über Total Commander zu nutzen.
 
 ### Sicherung/Wiederherstellung über PS4000
 - Sicherung oder Wiederherstellung starten -> Programm startet automatisch
 - Zum Datensicherungsordner navigieren
+- Auswählen ob man mit dem Projekt fertig ist oder nur eine Zwischensicherung macht.
 - Sichergehen dass der Ordner aktiv ist (Rahmen ist nicht grau)
 - In der Benutzeroberfläche des Programms auf "Sichern" oder "Wiederherstellen" klicken
 - Sicherung wie gewohnt ablegen oder Wiederherstellung starten
 
 ### Sicherung/Wiederherstellung über Windows Explorer
+- Rechtsklick auf das blaue D in der Schnellstartleiste -> Ablage über Explorer
 - Zum Datensicherungsordner navigieren
-- Rechtsklick auf das Taskleistensymbol (blaues D) -> Ablage über Explorer
+- Auswählen ob man mit dem Projekt fertig ist oder nur eine Zwischensicherung macht.
 - Sichergehen dass der Ordner aktiv ist (Rahmen ist nicht grau)
 - In der Benutzeroberfläche des Programms auf "Sichern" oder "Wiederherstellen" klicken
 - Sicherung ablegen/entnehmen
 
 ### Sicherung ausbuchen
-- Zum Datensicherungsordner navigieren
-- Rechtsklick auf das Taskleistensymbol (blaues D) -> Ablage über Explorer
-- Sichergehen dass der Ordner aktiv ist (Rahmen ist nicht grau)
+- Rechtsklick auf das blaue D in der Schnellstartleiste -> Ablage über Explorer
 - In der Benutzeroberfläche des Programms auf "Ausbuchen" klicken
+- Zum Datensicherungsordner navigieren und die Datei auswählen die verschickt werden soll
 - Name der Person an die die Sicherung verschickt/gegeben wird eintragen und bestätigen
-- Sicherung entnehmen
+- Empfänger anpassen, im Moment wird noch nicht die volle Emailadresse automatisch eingetragen
 
 ## Einblendpunkt-/Datenpunktzähler
-Dieses Programm zählt anhand eines Stapesdrucks die Anzahl der Einblend- oder Datenpunkte einer GLT.
+Dieses Programm zählt anhand eines Stapesdrucks die Anzahl der Einblend- oder Datenpunkte einer Neutrino GLT.
 
 ### Vorgehensweise:
 - In Bedienebene einrichten einen Stapeldruck inklusive aller Daten- bzw. Einblendpunkte erstellen.
@@ -50,3 +54,6 @@ Dieses Programm zählt anhand eines Stapesdrucks die Anzahl der Einblend- oder D
 
 ## GLT Fernbedienung
 Erzeugt/entfernt Trendkurven 1-fach, 5-fach und 10-fach. Setzt Störmeldung auf Störung = 0 oder Störung = 1 1-fach, 5-fach und 10-fach.
+
+## Autovervollständigung
+Nur nach Installation von Autohotkey verfügbar.
