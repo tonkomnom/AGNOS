@@ -10,7 +10,7 @@ SetWorkingDir %A_ScriptDir%
 SetBatchLines, -1
 SetMouseDelay, -1, -1
 
-Menu, Tray, Tip, Erlkönig
+Menu, Tray, Tip, A.G.N.O.S.
 ;Menu, Tray, NoStandard
 Menu, Tray, Add
 
@@ -289,11 +289,11 @@ gAbout:
 	return
 
 	Gitlink:
-		Run, https://github.com/tonkomnom/erlkoenig
+		Run, https://github.com/tonkomnom/AGNOS
 		return
 
 sHelp:
-	Run, https://github.com/tonkomnom/erlkoenig
+	Run, https://github.com/tonkomnom/AGNOS
 	return
 
 sExit:
