@@ -1,41 +1,52 @@
-# erlkoenig
+# A.G.N.O.S.
+**A**utomated **G**adgets for **N**oobs **O**ffice **S**uite
 
-Wer reitet so spät durch Nacht und Wind?<br/>
-Es ist der Vater mit seinem Kind;<br/>
-Er hat den Knaben wohl in dem Arm,<br/>
-Er fasst ihn sicher, er hält ihn warm.<br/>
+## Vorwort
+Dies ist eine Sammlung von scripts und Programmen um diverse Arbeitsabläufe zu erleichtern und/oder beschleunigen. Ich teste alles auf richtige Funktion und Fehlerfreiheit, kann und werde dies aber nie garantieren. Viele Funktionen hängen zum Teil maßgeblich von der Geschwindigkeit der Rechner und Systeme ab. Ich versuche dies immer zu berücksichtigen, was aber natürlich nicht immer klappen kann.
 
-Mein Sohn, was birgst du so bang dein Gesicht? –<br/>
-Siehst, Vater, du den Erlkönig nicht?<br/>
-Den Erlenkönig mit Kron’ und Schweif? –<br/>
-Mein Sohn, es ist ein Nebelstreif. –<br/>
+Ich übernehme somit **keinerlei** Verantwortung für Schäden jeglicher Art die durch die Benutzung entstehen! Ich stehe jedoch (fast) jederzeit für Fragen, Fehlerbeseitigung und Hilfe zur Verfügung.
 
-„Du liebes Kind, komm, geh mit mir!<br/>
-Gar schöne Spiele spiel’ ich mit dir;<br/>
-Manch’ bunte Blumen sind an dem Strand,<br/>
-Meine Mutter hat manch gülden Gewand.“ –<br/>
+Die Installation von [Autohotkey](https://autohotkey.com/ ) nicht nötig, ein paar Funktionen werden aber erst dadurch verfügbar.
 
-Mein Vater, mein Vater, und hörest du nicht,<br/>
-Was Erlenkönig mir leise verspricht? –<br/>
-Sei ruhig, bleibe ruhig, mein Kind;<br/>
-In dürren Blättern säuselt der Wind. –<br/>
+Ich bin jederzeit für feedback, Vorschläge und Wünsche offen. Jeglicher code den ich geschrieben habe kann unter [GNU GPL V3](https://www.gnu.org/licenses/gpl-3.0.en.html), [Autohotkey](https://autohotkey.com/) selbst unter [GNU GPL V2](https://www.gnu.org/licenses/gpl-2.0.html) genutzt werden.
 
-„Willst, feiner Knabe, du mit mir gehn?<br/>
-Meine Töchter sollen dich warten schön;<br/>
-Meine Töchter führen den nächtlichen Reihn<br/>
-Und wiegen und tanzen und singen dich ein.“ –<br/>
+Erreichbar bin ich telefonisch, per Email, oder über Microsoft Teams - Email Adresse sieht man nach Anmeldung auf GitHub [hier](https://github.com/tonkomnom "Tonk's GitHub Profil"), alternative Kontaktdaten gebe ich auf Anfrage heraus.
 
-Mein Vater, mein Vater, und siehst du nicht dort<br/>
-Erlkönigs Töchter am düstern Ort? –<br/>
-Mein Sohn, mein Sohn, ich seh’ es genau:<br/>
-Es scheinen die alten Weiden so grau. –<br/>
 
-„Ich liebe dich, mich reizt deine schöne Gestalt;<br/>
-Und bist du nicht willig, so brauch’ ich Gewalt.“ –<br/>
-Mein Vater, mein Vater, jetzt faßt er mich an!<br/>
-Erlkönig hat mir ein Leids getan! –<br/>
+## PS4000 Datensicherungs-Dokumentation (DatSiDoku)
+Dieses Program dient dazu PS4000 Datensicherungen besser und einfacher zu dokumentieren und nachzuverfolgen. Beim erstmaligen starten wird ein Autostart Eintrag angelegt, es muss somit nur ein einziges Mal die \*.exe ausgeführt werden. Das Programm startet entweder automatisch beim Starten einer Sicherung oder Wiederherstellung oder über das Rechtsklick Menü des Taskleistensymbols. Es legt entsprechend des Vorgangs eine Datei mit aktuellem Datum, Art des Vorgangs und Name des Nutzers ab. Diese Datei hat eine \*.ps5 Endung, ist somit auch in PS4000 sichtbar (im Gegensatz zu einer \*.txt Datei). Die Option "Ablage über Explorer" ermöglicht es die Datei für jemanden auszubuchen und deren Namen zu hinterlegen.
 
-Dem Vater grauset’s; er reitet geschwind,<br/>
-Er hält in Armen das ächzende Kind,<br/>
-Erreicht den Hof mit Mühe und Not;<br/>
-In seinen Armen das Kind war tot.
+Leider ist es (im Moment) nicht möglich das Programm über Total Commander zu nutzen.
+
+### Sicherung/Wiederherstellung über PS4000
+- Sicherung oder Wiederherstellung starten -> Programm startet automatisch
+- Zum Datensicherungsordner navigieren
+- Sichergehen dass der Ordner aktiv ist (Rahmen ist nicht grau)
+- In der Benutzeroberfläche des Programms auf "Sichern" oder "Wiederherstellen" klicken
+- Sicherung wie gewohnt ablegen oder Wiederherstellung starten
+
+### Sicherung/Wiederherstellung über Windows Explorer
+- Zum Datensicherungsordner navigieren
+- Rechtsklick auf das Taskleistensymbol (blaues D) -> Ablage über Explorer
+- Sichergehen dass der Ordner aktiv ist (Rahmen ist nicht grau)
+- In der Benutzeroberfläche des Programms auf "Sichern" oder "Wiederherstellen" klicken
+- Sicherung ablegen/entnehmen
+
+### Sicherung ausbuchen
+- Zum Datensicherungsordner navigieren
+- Rechtsklick auf das Taskleistensymbol (blaues D) -> Ablage über Explorer
+- Sichergehen dass der Ordner aktiv ist (Rahmen ist nicht grau)
+- In der Benutzeroberfläche des Programms auf "Ausbuchen" klicken
+- Name der Person an die die Sicherung verschickt/gegeben wird eintragen und bestätigen
+- Sicherung entnehmen
+
+## Einblendpunkt-/Datenpunktzähler
+Dieses Programm zählt anhand eines Stapesdrucks die Anzahl der Einblend- oder Datenpunkte einer GLT.
+
+### Vorgehensweise:
+- In Bedienebene einrichten einen Stapeldruck inklusive aller Daten- bzw. Einblendpunkte erstellen.
+- Die Datei an einem beliebigen Ort speichern.
+- Das Programm starten und die Datei einlesen.
+
+## GLT Fernbedienung
+Erzeugt/entfernt Trendkurven 1-fach, 5-fach und 10-fach. Setzt Störmeldung auf Störung = 0 oder Störung = 1 1-fach, 5-fach und 10-fach.
