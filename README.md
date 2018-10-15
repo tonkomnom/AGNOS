@@ -13,8 +13,33 @@ Ich bin jederzeit für feedback, Vorschläge und Wünsche offen. Jeglicher code 
 Erreichbar bin ich telefonisch, per Email, oder über Microsoft Teams - Email Adresse sieht man nach Anmeldung auf GitHub [hier](https://github.com/tonkomnom "Tonk's GitHub Profil"), alternative Kontaktdaten gebe ich auf Anfrage heraus.
 
 ## Allgemein
+Über das [Rechtsklickmenü in der Schnellstartleiste](https://i.imgur.com/pDZA7ET.png) lassen sich die PS4000 Datensicherungs-Doku, die Autovervollständigung, die Neutrino GLT Fernbedienung und der Einblendpunkt/Datenpunkt-Zähler starten.
+Unter Optionen kann man bei Bedarf die [Tastaturkürzeln ein und aus](https://i.imgur.com/i4coHvu.png) schalten.
+
+### Installation
+Download-Link folgt in Kürze. Zum Installieren einfach nur die heruntergeladene \*.exe ausführen.
+
+### Autostart
+Das Hauptscript, die PS4000 Datensicherungs-Doku und die Autovervollständigung können alle automatisch mit Windows gestartet werden. Dies lässt sich per [Rechtsklick in der Schnellstartleiste unter Optionen](https://i.imgur.com/SDpKuTu.png) ändern.
 
 ## Tastaturkürzel
+### Allgemein:
+- F12 lang drücken (>=1s) = schließt im Notfall alle laufenden Autohotkey scripts
+
+### Neutrino GLT:
+- Doppelklick auf F2 = Öffnet einen Einblendpunkt und die Einblendpunktauswahl.
+- F2 "lang" drücken = Entfernt oder setzt das Häkchen bei Datenpunkttyp in der Datenpunktauswahl.
+- Windows-Taste + Tab = Schließt das Eingabefenster für Textblocks in "Bedienebene einrichten".
+- Strg + Z = Rückgängig
+- Strg + S = Sichern
+- Shift + Recht/Links = Rotiert Auswahl nach rechts oder links.
+- Strg + Pfeiltasten = Bewegt die Auswahl um zehn Schritte in die entsprechende Richtung.
+
+### PS4000:
+- Alt + k: Generiert ein Kommentar mit Info icon und blauem Hintergrund.
+
+### Tric:
+- Windows-Taste + Esc = Schließt eine Tric Zeichnung und ruft die Zeichnugsverwaltung auf.
 
 ## PS4000 Datensicherungs-Dokumentation (DatSiDoku)
 Dieses Program dient dazu PS4000 Datensicherungen besser und einfacher zu dokumentieren und nachzuverfolgen. Das Programm startet entweder automatisch beim Starten einer Sicherung oder Wiederherstellung oder über das Rechtsklick Menü des Taskleistensymbols. Es legt entsprechend des Vorgangs eine Datei mit aktuellem Datum, Art des Vorgangs und Name des Nutzers ab. Diese Datei hat eine \*.ps5 Endung, ist somit auch in PS4000 sichtbar (im Gegensatz zu einer \*.txt Datei). Die Option "Ablage über Explorer" ermöglicht es die Datei für jemanden auszubuchen und deren Namen zu hinterlegen.
@@ -56,4 +81,4 @@ Dieses Programm zählt anhand eines Stapesdrucks die Anzahl der Einblend- oder D
 Erzeugt/entfernt Trendkurven 1-fach, 5-fach und 10-fach. Setzt Störmeldung auf Störung = 0 oder Störung = 1 1-fach, 5-fach und 10-fach.
 
 ## Autovervollständigung
-Nur nach Installation von Autohotkey verfügbar.
+Dieses script ist nur nach Installation von Autohotkey verfügbar.
