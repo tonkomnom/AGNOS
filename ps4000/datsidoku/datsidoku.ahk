@@ -66,8 +66,10 @@ Sichern:
 	FileDelete, %currentPath%\*abgelegt*.ps5
 	FileAppend, , %currentPath%\%CurrentDateTime% letzte Sicherung abgelegt durch %A_UserName% - %vstatus%.ps5
 		if ErrorLevel
-			SoundPlay, *16
-			MsgBox, 16, Fehler, Achtung, es wurde keine Datei erzeugt!
+			{
+				SoundPlay, *16
+				MsgBox, 16, Fehler, Achtung, es wurde keine Datei erzeugt!
+			}
 		else
 			{
 				SplashTextOn,,25, Status, Datei wurde erzeugt.
@@ -97,8 +99,10 @@ Herstellen:
 	FileDelete, %currentPath%\*wiederhergestellt*.ps5
 	FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt wiederhergestellt von %A_UserName%.ps5
 		if ErrorLevel
-			SoundPlay, *16
-			MsgBox, 16, Fehler, Achtung, es wurde keine Datei erzeugt!
+			{
+				SoundPlay, *16
+				MsgBox, 16, Fehler, Achtung, es wurde keine Datei erzeugt!
+			}
 		else
 			{
 				SplashTextOn,,25, Status, Datei wurde erzeugt.
@@ -141,8 +145,10 @@ Explorersub1:
 	FileDelete, %currentPath%\*abgelegt*.ps5
 	FileAppend, , %currentPath%\%CurrentDateTime% letzte Sicherung abgelegt durch %A_UserName% - %vstatus%.ps5
 		if ErrorLevel
-			SoundPlay, *16
-			MsgBox, 16, Fehler, Achtung, es wurde keine Datei erzeugt!
+			{
+				SoundPlay, *16
+				MsgBox, 16, Fehler, Achtung, es wurde keine Datei erzeugt!
+			}
 		else
 			{
 				SplashTextOn,,25, Status, Datei wurde erzeugt.
@@ -162,8 +168,10 @@ Explorersub2:
 	FileDelete, %currentPath%\*wiederhergestellt*.ps5
 	FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt wiederhergestellt von %A_UserName%.ps5
 		if ErrorLevel
-			SoundPlay, *16
-			MsgBox, 16, Fehler, Achtung, es wurde keine Datei erzeugt!
+			{
+				SoundPlay, *16
+				MsgBox, 16, Fehler, Achtung, es wurde keine Datei erzeugt!
+			}
 		else
 			{
 				SplashTextOn,,25, Status, Datei wurde erzeugt.
