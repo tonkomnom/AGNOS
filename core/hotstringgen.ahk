@@ -2,13 +2,14 @@
 
 I_Icon = %A_ScriptDir%\icons\ablue.ico
 Menu, Tray, NoStandard
-Menu, Tray, Icon, %I_Icon%
+Menu, Tray, Icon, %I_Icon%, , 1
 Menu, Tray, Tip, Autovervollständigung
 
 Menu, Tray, Add, Hilfe..., sHelp
 Menu, Tray, Add
 
 Menu, Tray, Add, Editieren..., sEdit
+Menu, Tray, Add, Anhalten, sPause
 Menu, Tray, Add, Beenden, sExit
 return
 
@@ -18,6 +19,12 @@ sHelp:
 
 sEdit:
 	Edit
+	return
+
+sPause:
+	Menu, Tray, ToggleCheck, Anhalten
+	Suspend, Toggle
+	Pause, Toggle
 	return
 
 sExit:
