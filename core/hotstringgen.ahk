@@ -5,13 +5,25 @@ Menu, Tray, NoStandard
 Menu, Tray, Icon, %I_Icon%
 Menu, Tray, Tip, Autovervollständigung
 
+Menu, Tray, Add, Hilfe..., sHelp
+Menu, Tray, Add
+
+Menu, Tray, Add, Editieren..., sEdit
 Menu, Tray, Add, Beenden, sExit
 return
+
+sHelp:
+	Run, https://ahkde.github.io/docs/Hotstrings.htm
+	return
+
+sEdit:
+	Edit
+	return
 
 sExit:
 	ExitApp
 
-!h::
+^!a::
 	AutoTrim Off
 	ClipboardOld = %ClipboardAll%
 	Clipboard = 
@@ -26,20 +38,21 @@ sExit:
 	StringReplace, Hotstring, Hotstring, `;, ```;, All
 	Clipboard = %ClipboardOld%
 	SetTimer, MoveCaret, 10
-	InputBox, Hotstring, New Hotstring, Type your abreviation at the indicated insertion point. You can also edit the replacement text if you wish.`n`nExample entry: :*R:btw`::by the way,,,,,,,, :*R:`::%Hotstring%
+	InputBox, Hotstring, Neue Autovervollständigung, Tippen Sie Ihre Abkürzung zwischen den 2. und 3. Doppelpunkt. Sie können auch den zu vervollständigen Text noch ändern.`n`nBeispiel: :*R:MfG`::Mit freundlichen Grüßen,,,,,,,, :*R:`::%Hotstring%
 		if ErrorLevel
 			return
 	IfInString, Hotstring, :*R`:::
 		{
-			MsgBox You didn't provide an abbreviation. The hotstring has not been added.
+			MsgBox, , Fehler,Sie haben keine Abkürzung eingegeben, es wurde keine Autovervollständigung angelegt.
 			return
 		}
 	FileAppend, `n%Hotstring%, %A_ScriptFullPath%
 	Reload
 	Sleep 200
-	MsgBox, 4, , The hotstring just added appears to be improperly formatted.  Would you like to open the script for editing? Note that the bad hotstring is at the bottom of the script.
-	IfMsgBox, Yes, Edit
-	return
+	MsgBox, 4, Fehler, Die Autovervollständigung wurde anscheinend nicht richtig formatiert.  Wollen Sie das script zum Bearbeiten öffnen (die fehlerhafte Autovervollständigung befindet sich an letzter Stelle)?.
+	IfMsgBox, Yes
+		Edit
+		return
 
 	MoveCaret:
 	IfWinNotActive, New Hotstring
@@ -48,4 +61,4 @@ sExit:
 	SetTimer, MoveCaret, Off
 	return
 
-
+;Autovervollständigungen
