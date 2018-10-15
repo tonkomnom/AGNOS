@@ -1,18 +1,12 @@
-﻿#Persistent
-;Keeps a script permanently running (that is, until the user closes it or ExitApp is encountered).
-#SingleInstance, force
-;Determines whether a script is allowed to run again when it is already running.
+﻿#SingleInstance, force
 SendMode Input
-;Switches to the SendInput method for Send, SendRaw, Click, and MouseMove/Click/Drag.
 SetWorkingDir %A_ScriptDir%
-;Script unconditionally uses its own folder as its working directory.
 
 SetBatchLines, -1
 SetMouseDelay, -1, -1
 
 Menu, Tray, Tip, A.G.N.O.S.
-;Menu, Tray, NoStandard
-Menu, Tray, Add
+Menu, Tray, NoStandard
 
 Menu, Tray, Add, Info..., gAbout
 Menu, Tray, Add, Hilfe, sHelp
@@ -20,7 +14,7 @@ Menu, Tray, Add
 
 Menu, options, Add, Tastaturkürzel aktiviert, stogglehk
 Menu, options, Add, Autovervollständigung mit Windows starten, sautohotstringgen
-Menu, options, Add, Erlkoenig mit Windows starten, sautomain
+Menu, options, Add, A.G.N.O.S. mit Windows starten, sautomain
 Menu, options, Add, DatSiDoku mit Windows starten, sautodatsi
 Menu, Tray, Add, Optionen, :options
 Menu, Tray, Add
@@ -96,11 +90,11 @@ RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
 IniRead, vautomaininit, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
 	if vautomaininit = true
 		{
-			Menu, options, Check, Erlkoenig mit Windows starten
+			Menu, options, Check, A.G.N.O.S. mit Windows starten
 		}
 	else
 		{
-			Menu, options, UnCheck, Erlkoenig mit Windows starten
+			Menu, options, UnCheck, A.G.N.O.S. mit Windows starten
 		}
 
 IniRead, vautodatsiinit, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
@@ -183,13 +177,13 @@ sautomain:
 	IniRead, vautomain, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
 		if vautomain = true
 			{
-				Menu, options, UnCheck, Erlkoenig mit Windows starten
+				Menu, options, UnCheck, A.G.N.O.S. mit Windows starten
 				IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
 				FileDelete, %A_Startup%\main.lnk
 			}
 		else
 			{
-				Menu, options, Check, Erlkoenig mit Windows starten
+				Menu, options, Check, A.G.N.O.S. mit Windows starten
 				IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
 				FileCreateShortcut, %A_ScriptFullPath%, %A_Startup%\main.lnk
 			}
@@ -281,7 +275,7 @@ sDatSiDoku:
 gAbout:
 	Gui, 99:Destroy
 	Gui, 99:Add, Text, ,© Tonk Omnom
-	Gui, 99:Add, Text, ,Version V0.7.0, 2018-10-14
+	Gui, 99:Add, Text, ,Version V0.8.0, 2018-10-15
 	Gui, 99:Add, Text, cblue gGitlink, https://github.com/tonkomnom
 	Gui, 99:Add, Text,
 	Gui, 99: -MinimizeBox
@@ -289,7 +283,7 @@ gAbout:
 	return
 
 	Gitlink:
-		Run, https://github.com/tonkomnom/AGNOS
+		Run, https://github.com/tonkomnom
 		return
 
 sHelp:
@@ -317,10 +311,6 @@ sExit:
 	else
 		Send, ^s
 	return
-
-F10::
-	MsgBox, , Title, Text,
-return
 
 $F12::
 	Suspend, Permit
