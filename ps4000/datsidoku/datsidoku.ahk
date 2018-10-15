@@ -34,6 +34,7 @@ return
 			return
 		}
 	return
+#IfWinActive
 
 
 ;GUI PS4000 Sicherung
@@ -174,31 +175,37 @@ Explorersub2:
 	return
 
 Explorersub3:
-	WinGet, win_id, ID, A
-	ControlGetText bar_text, ToolbarWindow323, ahk_id %win_id%
-	StringTrimLeft, currentPath, bar_text, 9
-	FormatTime, CurrentDateTime,, yyyy-MM-dd_HH-mm
+	FileSelectFile, currentfile,,%A_Desktop%, Datei auswählen..., *.ps5
+		if (currentfile = "")
+			{
+				SoundPlay, *16
+				MsgBox, 16, Fehler!,Sie haben keine Datei ausgewählt.
+				return
+			}
+		Loop, %currentfile%
+			currentpath := A_LoopFileDir
 	InputBox, ausbuchen_name, PS4000 Ablage, Für wen wird die Sicherung ausgebucht?,,,150
 		if ausbuchen_name =
-			SoundPlay, *16
-			MsgBox, 16, Fehler!, Sie haben keinen Namen angegeben, bitte erneut versuchen.
+			MsgBox,, Fehler!, Sie haben keinen Namen angegeben, bitte erneut versuchen.
 		else
-		{
-			FileDelete, %currentPath%\*übergeben*.ps5
-			FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt übergeben an %ausbuchen_name%.ps5
-				if ErrorLevel
-					SoundPlay, *16
-					MsgBox, 16, Fehler!, Achtung, es wurde keine Datei erzeugt!
-				else
-					{
-						SplashTextOn,,25, Status, Datei wurde erzeugt.
-						Sleep, 750
-						SplashTextOff
-						Gui, Destroy
-					}
-			currentPath :=""
-			ausbuchen_name :=""
-		}
+			{
+				FileDelete, %currentPath%\*übergeben*.ps5
+				FormatTime, CurrentDateTime,, yyyy-MM-dd_HH-mm
+				FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt übergeben an %ausbuchen_name%.ps5
+					if ErrorLevel
+						MsgBox,, Fehler!, Achtung, es wurde keine Datei erzeugt!
+					else
+						{
+							SplashTextOn,,25, Status, Datei wurde erzeugt.
+							Sleep, 750
+							SplashTextOff
+							Run, "C:\Program Files\Microsoft Office 15\root\office15\OUTLOOK.EXE" /c ipm.note /m %ausbuchen_name% /a "%currentfile%"
+							Gui, Destroy
+						}
+				currentfile :=""
+				currentPath :=""
+				ausbuchen_name :=""
+			}
 	return
 
 
