@@ -13,29 +13,20 @@ Menu, Tray, Add, Hilfe, sHelp
 Menu, Tray, Add
 
 Menu, options, Add, Tastaturkürzel aktiviert, stogglehk
-Menu, options, Add, Autovervollständigung mit Windows starten, sautohotstringgen
 Menu, options, Add, A.G.N.O.S. mit Windows starten, sautomain
 Menu, options, Add, DatSiDoku mit Windows starten, sautodatsi
+Menu, options, Add, Autovervollständigung mit Windows starten, sautohotstringgen
 Menu, Tray, Add, Optionen, :options
 Menu, Tray, Add
 
-Menu, Tray, Add, Autovervollständigung, sRunhotstringgen
-Menu, Tray, Add, EP/DP Zähler, sRunEPDP
-Menu, Tray, Add, Neutrino GLT Fernbedienung, sRunremote
 Menu, Tray, Add, DatSiDoku, sDatSiDoku
+Menu, Tray, Add, Autovervollständigung, sRunhotstringgen
+Menu, Tray, Add, Neutrino GLT Fernbedienung, sRunremote
+Menu, Tray, Add, EP/DP Zähler, sRunEPDP
 Menu, Tray, Add
 
 Menu, Tray, Add, Beenden, sExit
 
-
-if FileExist(A_Startup "\hotstringgen.lnk")
-	{
-		IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-	}
-else
-	{
-		IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-	}
 
 if FileExist(A_Startup "\main.lnk")
 	{
@@ -53,6 +44,15 @@ if FileExist(A_Startup "\datsidoku.lnk")
 else
 	{
 		IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_datsi
+	}
+
+if FileExist(A_Startup "\hotstringgen.lnk")
+	{
+		IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+	}
+else
+	{
+		IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
 	}
 
 
@@ -138,40 +138,6 @@ stogglehk:
 			}
 	return
 
-sautohotstringgen:
-	IniRead, vautohotstringgen, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
-	if (dir = "")
-		{
-			if vautohotstringgen = true
-				{
-					Menu, options, UnCheck, Autovervollständigung mit Windows starten
-					IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-					FileDelete, %A_Startup%\hotstringgen.lnk
-				}
-			else
-				{
-					Menu, options, Check, Autovervollständigung mit Windows starten
-					IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-					FileCreateShortcut, %A_ScriptDir%\core\hotstringgen.exe, %A_Startup%\hotstringgen.lnk
-				}
-		}
-	else
-		{
-			if vautohotstringgen = true
-				{
-					Menu, options, UnCheck, Autovervollständigung mit Windows starten
-					IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-					FileDelete, %A_Startup%\hotstringgen.lnk
-				}
-			else
-				{
-					Menu, options, Check, Autovervollständigung mit Windows starten
-					IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-					FileCreateShortcut, %A_ScriptDir%\core\hotstringgen.ahk, %A_Startup%\hotstringgen.lnk
-				}
-		}
-	return
 
 sautomain:
 	IniRead, vautomain, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
@@ -224,6 +190,54 @@ sautodatsi:
 		}
 	return
 
+sautohotstringgen:
+	IniRead, vautohotstringgen, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
+		{
+			if vautohotstringgen = true
+				{
+					Menu, options, UnCheck, Autovervollständigung mit Windows starten
+					IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+					FileDelete, %A_Startup%\hotstringgen.lnk
+				}
+			else
+				{
+					Menu, options, Check, Autovervollständigung mit Windows starten
+					IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+					FileCreateShortcut, %A_ScriptDir%\core\hotstringgen.exe, %A_Startup%\hotstringgen.lnk
+				}
+		}
+	else
+		{
+			if vautohotstringgen = true
+				{
+					Menu, options, UnCheck, Autovervollständigung mit Windows starten
+					IniWrite, false, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+					FileDelete, %A_Startup%\hotstringgen.lnk
+				}
+			else
+				{
+					Menu, options, Check, Autovervollständigung mit Windows starten
+					IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
+					FileCreateShortcut, %A_ScriptDir%\core\hotstringgen.ahk, %A_Startup%\hotstringgen.lnk
+				}
+		}
+	return
+
+
+sDatSiDoku:
+	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+	if (dir = "")
+		{
+			Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.exe
+		}
+	else
+		{
+			Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk
+		}
+	return
+
 sRunhotstringgen:
 	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
 	if (dir = "")
@@ -233,18 +247,6 @@ sRunhotstringgen:
 	else
 		{
 			Run, %A_ScriptDir%\core\hotstringgen.ahk
-		}
-	return
-
-sRunEPDP:
-	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
-	if (dir = "")
-		{
-			Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.exe
-		}
-	else
-		{
-			Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
 		}
 	return
 
@@ -260,15 +262,15 @@ sRunremote:
 		}
 	return
 
-sDatSiDoku:
+sRunEPDP:
 	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
 	if (dir = "")
 		{
-			Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.exe
+			Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.exe
 		}
 	else
 		{
-			Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk
+			Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
 		}
 	return
 
