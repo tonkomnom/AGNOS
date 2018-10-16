@@ -276,8 +276,9 @@ sRunEPDP:
 
 gAbout:
 	Gui, 99:Destroy
+	Gui, 99:Add, Text, ,Automated Gadgets for Noobs Office Suite
+	Gui, 99:Add, Text, ,Version V0.9.0, 2018-10-16
 	Gui, 99:Add, Text, ,© Tonk Omnom
-	Gui, 99:Add, Text, ,Version V0.8.0, 2018-10-15
 	Gui, 99:Add, Text, cblue gGitlink, https://github.com/tonkomnom
 	Gui, 99:Add, Text,
 	Gui, 99: -MinimizeBox
