@@ -8,20 +8,22 @@ Ich übernehme somit **keinerlei** Verantwortung für Schäden jeglicher Art die
 
 Ich bin jederzeit für feedback, Vorschläge und Wünsche offen. Jeglicher code den ich geschrieben habe kann unter [GNU GPL V3](https://www.gnu.org/licenses/gpl-3.0.en.html), [Autohotkey](https://autohotkey.com/) selbst unter [GNU GPL V2](https://www.gnu.org/licenses/gpl-2.0.html) genutzt werden.
 
-Erreichbar bin ich telefonisch, per Email, oder über Microsoft Teams - Email Adresse sieht man nach Anmeldung auf GitHub [hier](https://github.com/tonkomnom "Tonk's GitHub Profil"), alternative Kontaktdaten gebe ich auf Anfrage heraus.
+Erreichbar bin ich telefonisch (4128), per Email, oder über Microsoft Teams - private Email Adresse sieht man nach Anmeldung auf GitHub [hier](https://github.com/tonkomnom "Tonk's GitHub Profil"), alternative Kontaktdaten gebe ich auf Anfrage heraus.
 
 ## Allgemein
-Über das [Rechtsklickmenü in der Schnellstartleiste](https://i.imgur.com/pDZA7ET.png) lassen sich die PS4000 Datensicherungs-Doku, die Autovervollständigung, die Neutrino GLT Fernbedienung und der Einblendpunkt/Datenpunkt-Zähler starten.
-Unter Optionen kann man bei Bedarf die [Tastaturkürzeln ein und aus](https://i.imgur.com/i4coHvu.png) schalten.
+Über das Rechtsklickmenü in der Schnellstartleiste lassen sich die PS4000 Datensicherungs-Doku, die Autovervollständigung, die Neutrino GLT Fernbedienung und der Einblendpunkt/Datenpunkt-Zähler starten.
+![](https://i.imgur.com/pDZA7ET.png "Rechtsklickmenü")
 
 ### Installation
-Die Installation von [Autohotkey](https://autohotkey.com/) ist nicht nötig, ein paar Funktionen werden aber erst dadurch verfügbar. Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene \*.exe ausführen. Download-Link folgt in Kürze.
+Die Installation von [Autohotkey](https://autohotkey.com/) ist nicht nötig, ein paar Funktionen werden aber erst dadurch verfügbar. Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene \*.exe Datei ausführen. Download-Link folgt in Kürze.
 
 ### Autostart
-Das Hauptscript, die PS4000 Datensicherungs-Doku und die Autovervollständigung können alle automatisch mit Windows gestartet werden. Dies lässt sich per [Rechtsklick in der Schnellstartleiste unter Optionen](https://i.imgur.com/SDpKuTu.png) ändern.
+Das Hauptscript, die PS4000 Datensicherungs-Doku und die Autovervollständigung können alle automatisch mit Windows gestartet werden. Dies lässt sich per Rechtsklick in der Schnellstartleiste unter Optionen ändern.
+![](https://i.imgur.com/SDpKuTu.png "Autostart")
 
 ## Tastaturkürzel
-Die Tastaturkürzel und ihre Funktion sind immer nur im entsprechenden Programm aktiv. Leider kann ich zum Teil, gerade in PS4000 und der Neutrino GLT, nicht kontrollieren ob ein Befehl ausgeführt werden darf weil z.B. das richtige Fenster offen ist, also muss sich jeder sicher sein dass alle Bedingungen eines Kürzels erfüllt sind.
+Die Tastaturkürzel und ihre Funktion sind immer nur im entsprechenden Programm aktiv. Leider kann ich zum Teil, gerade in PS4000 und der Neutrino GLT, nicht kontrollieren ob ein Befehl ausgeführt werden darf weil z.B. das richtige Fenster offen ist, also muss sich jeder sicher sein dass alle Bedingungen eines Kürzels erfüllt sind. Unter Optionen kann man bei Bedarf die Tastaturkürzel ein oder aus schalten.</br>
+![](https://i.imgur.com/i4coHvu.png "Tastaturkürzel")
 
 ### Allgemein:
 - F12 lang drücken (>=1s) = schließt im Notfall alle laufenden Autohotkey scripts. (Bedingung: keine)
@@ -80,6 +82,15 @@ Dieses Programm zählt anhand eines Stapesdrucks die Anzahl der Einblend- oder D
 ## GLT Fernbedienung
 Erzeugt/entfernt Trendkurven 1-fach, 5-fach und 10-fach. Setzt Störmeldung auf Störung = 0 oder Störung = 1 1-fach, 5-fach und 10-fach.
 
+### Vorgehensweise:
+- Zu trendende Werte und Störmeldungen in Parametrierung einfiltern.
+- Größe der Schleife wählen
+- Größe der Verzögerung wählen. Standard sind 500ms, was bei einer Einmandaten GLT in der Regel gut funktionieren sollte.
+- Die erste Zeile in der Liste anwählen.
+- Auf OK klicken.
+
+Dieses script is extrem von der Geschwindigkeit der GLT abhängig - mit dem Schieberegler kann die Verzögerung zwischen den einzelnen Schritten verändert werden und ein Klick mit der linken Maustaste unterbricht im Notfall eine 5- oder 10-fach Schleife.
+
 ## Autovervollständigung (nur nach Installation von Autohotkey verfügbar)
 Dieses script ermöglicht es Wörtern oder Zeichenfolgen Abkürzungen zuzuweisen oder auch beliebte Rechtschreibfehler sofort zu korrigieren, z.B.:
 
@@ -92,5 +103,6 @@ Einige Autovervollständigungen sind schon voreingestellt.
 
 ### Vorgehensweise:
 - Rechtsklick auf A.G.N.O.S. in der Schnellstartleiste -> Autovervollständigung
-- Das zu ersetzende Wort oder Zeichenfolge markieren und Strg + Alt + A drücken, die Abkürzung und eventuelle Bedingungen (siehe Dokumentation) eingeben und bestätigen
+- Das zu ersetzende Wort oder Zeichenfolge markieren und Strg + Alt + A drücken, die Abkürzung und eventuelle Bedingungen ([siehe Dokumentation](https://ahkde.github.io/docs/Hotstrings.htm)) eingeben und bestätigen
+![](https://i.imgur.com/f9FMJXd.png "Hotstrings")
 - Jede Autovervollständigung kann ich Nachhinein noch geändert oder gelöscht werden. Dazu Rechtsklick auf das blaue A -> Editieren...
