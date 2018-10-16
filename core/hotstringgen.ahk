@@ -68,4 +68,23 @@ sExit:
 	SetTimer, MoveCaret, Off
 	return
 
-;Autovervollständigungen
+;Autovervollständigungen (bei Autohotkey hotstrings genannt)
+;Format -> :Bedingung:Kürzel::zu ersetzender Text
+;geschweifte Klammern sind dazu da um Befehle wie Enter, Leerzeichen oder Pfeiltasten zu senden
+;mehrzeilige hotstrings lassen sich nicht über das Tastaturkürzel erzeugen
+;Dokumentation zur Formatierung und Optionen von hotstrings unter https://ahkde.github.io/docs/Hotstrings.htm
+:*:dddd::
+	FormatTime, CurrentDate,, yyyy-MM-dd
+	SendInput, %CurrentDate%
+return
+:*:zzzz::
+	FormatTime, CurrentDateTime,, yyyy-MM-dd-HH-mm
+	SendInput, %CurrentDateTime%
+return
+:*:e@::email@domain.de
+:c*:KPG::Kieback&Peter GmbH & Co. KG
+:*:mfg::Mit freundlichen Grüßen,{Enter 2}
+:*:xxxx::Sehr geehrte Frau{Space},{Left}
+:*:yyyy::Sehr geehrter Herr{Space},{Left}
+:*:xxyy::Sehr geehrte Damen und Herren,{Enter 2} 
+:*:rep.::Rep.-Schalter
