@@ -45,10 +45,10 @@ sExit:
 	StringReplace, Hotstring, Hotstring, `;, ```;, All
 	Clipboard = %ClipboardOld%
 	SetTimer, MoveCaret, 10
-	InputBox, Hotstring, Neue Autovervollständigung, Tippen Sie Ihre Abkürzung zwischen den 2. und 3. Doppelpunkt. Sie können auch den zu vervollständigen Text noch ändern.`n`nBeispiel: :*R:MfG`::Mit freundlichen Grüßen,,,,,,,, :*R:`::%Hotstring%
+	InputBox, Hotstring, Neue Autovervollständigung, Tippen Sie Ihre Abkürzung zwischen den 2. und 3. Doppelpunkt. Sie können auch den zu vervollständigen Text noch ändern.`n`nBeispiel: :*:MfG`::Mit freundlichen Grüßen,,,,,,,, :*:`::%Hotstring%
 		if ErrorLevel
 			return
-	IfInString, Hotstring, :*R`:::
+	IfInString, Hotstring, :*`:::
 		{
 			MsgBox, , Fehler,Sie haben keine Abkürzung eingegeben, es wurde keine Autovervollständigung angelegt.
 			return
@@ -62,9 +62,9 @@ sExit:
 		return
 
 	MoveCaret:
-	IfWinNotActive, New Hotstring
+	IfWinNotActive, Neue Autovervollständigung
 	    return
-	Send {Home}{Right 4}
+	Send {Home}{Right 3}
 	SetTimer, MoveCaret, Off
 	return
 
