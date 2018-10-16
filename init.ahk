@@ -1,6 +1,4 @@
-﻿;give instructions to install AHK???
-
-RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+﻿RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
 	if (dir = "")
 		{
 			FileCreateShortcut, %A_ScriptDir%\main.exe, %A_Startup%\main.lnk
