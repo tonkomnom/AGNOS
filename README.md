@@ -1,6 +1,8 @@
 # A.G.N.O.S.
 **A**utomated **G**adgets for **N**oobs **O**ffice **S**uite
 
+[Source Code (master) Download](https://github.com/tonkomnom/AGNOS/archive/master.zip) - funktioniert nur mit Autohotkey. Achtung, keine Release-Version, code ändert sich ständig!
+
 ## Vorwort
 Dies ist eine Sammlung von scripts und Programmen um diverse Arbeitsabläufe zu erleichtern und/oder beschleunigen. Ich teste alles auf richtige Funktion und Fehlerfreiheit, kann und werde dies aber nie garantieren. Viele Funktionen hängen zum Teil maßgeblich von der Geschwindigkeit der Rechner und Systeme ab. Ich versuche dies immer zu berücksichtigen, was aber natürlich nicht immer klappen kann.
 
@@ -103,6 +105,6 @@ Einige Autovervollständigungen sind schon voreingestellt.
 
 ### Vorgehensweise:
 - Rechtsklick auf A.G.N.O.S. in der Schnellstartleiste -> Autovervollständigung
-- Das zu ersetzende Wort oder Zeichenfolge markieren und Strg + Alt + A drücken, die Abkürzung und eventuelle Bedingungen ([siehe Dokumentation](https://ahkde.github.io/docs/Hotstrings.htm)) eingeben und bestätigen
+- Das zu ersetzende Wort oder Zeichenfolge markieren und Strg + Alt + A drücken, die Abkürzung und eventuelle Bedingungen ([siehe Dokumentation](https://ahkde.github.io/docs/Hotstrings.htm)) eingeben und bestätigen</br>
 ![](https://i.imgur.com/f9FMJXd.png "Hotstrings")
 - Jede Autovervollständigung kann ich Nachhinein noch geändert oder gelöscht werden. Dazu Rechtsklick auf das blaue A -> Editieren...
