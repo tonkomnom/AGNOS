@@ -11,7 +11,7 @@ Ich bin jederzeit für feedback, Vorschläge und Wünsche offen. Jeglicher code 
 Erreichbar bin ich telefonisch (4128), per Email, oder über Microsoft Teams - private Email Adresse sieht man nach Anmeldung auf GitHub [hier](https://github.com/tonkomnom "Tonk's GitHub Profil"), alternative Kontaktdaten gebe ich auf Anfrage heraus.
 
 ## Allgemein
-Über das Rechtsklickmenü in der Schnellstartleiste lassen sich die PS4000 Datensicherungs-Doku, die Autovervollständigung, die Neutrino GLT Fernbedienung und der Einblendpunkt/Datenpunkt-Zähler starten.
+Über das Rechtsklickmenü in der Schnellstartleiste lassen sich die PS4000 Datensicherungs-Doku, die Autovervollständigung, die Neutrino GLT Fernbedienung und der Einblendpunkt/Datenpunkt-Zähler starten.</br>
 ![](https://i.imgur.com/pDZA7ET.png "Rechtsklickmenü")
 
 ### Installation
