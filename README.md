@@ -6,8 +6,6 @@ Dies ist eine Sammlung von scripts und Programmen um diverse Arbeitsabläufe zu 
 
 Ich übernehme somit **keinerlei** Verantwortung für Schäden jeglicher Art die durch die Benutzung entstehen! Ich stehe jedoch (fast) jederzeit für Fragen, Fehlerbeseitigung und Hilfe zur Verfügung.
 
-Die Installation von [Autohotkey](https://autohotkey.com/ ) nicht nötig, ein paar Funktionen werden aber erst dadurch verfügbar.
-
 Ich bin jederzeit für feedback, Vorschläge und Wünsche offen. Jeglicher code den ich geschrieben habe kann unter [GNU GPL V3](https://www.gnu.org/licenses/gpl-3.0.en.html), [Autohotkey](https://autohotkey.com/) selbst unter [GNU GPL V2](https://www.gnu.org/licenses/gpl-2.0.html) genutzt werden.
 
 Erreichbar bin ich telefonisch, per Email, oder über Microsoft Teams - Email Adresse sieht man nach Anmeldung auf GitHub [hier](https://github.com/tonkomnom "Tonk's GitHub Profil"), alternative Kontaktdaten gebe ich auf Anfrage heraus.
@@ -17,13 +15,14 @@ Erreichbar bin ich telefonisch, per Email, oder über Microsoft Teams - Email Ad
 Unter Optionen kann man bei Bedarf die [Tastaturkürzeln ein und aus](https://i.imgur.com/i4coHvu.png) schalten.
 
 ### Installation
-Download-Link folgt in Kürze. Zum Installieren einfach nur die heruntergeladene \*.exe ausführen.
+Die Installation von [Autohotkey](https://autohotkey.com/) ist nicht nötig, ein paar Funktionen werden aber erst dadurch verfügbar. Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene \*.exe ausführen. Download-Link folgt in Kürze.
 
 ### Autostart
 Das Hauptscript, die PS4000 Datensicherungs-Doku und die Autovervollständigung können alle automatisch mit Windows gestartet werden. Dies lässt sich per [Rechtsklick in der Schnellstartleiste unter Optionen](https://i.imgur.com/SDpKuTu.png) ändern.
 
 ## Tastaturkürzel
 Die Tastaturkürzel und ihre Funktion sind immer nur im entsprechenden Programm aktiv. Leider kann ich zum Teil, gerade in PS4000 und der Neutrino GLT, nicht kontrollieren ob ein Befehl ausgeführt werden darf weil z.B. das richtige Fenster offen ist, also muss sich jeder sicher sein dass alle Bedingungen eines Kürzels erfüllt sind.
+
 ### Allgemein:
 - F12 lang drücken (>=1s) = schließt im Notfall alle laufenden Autohotkey scripts. (Bedingung: keine)
 
@@ -49,26 +48,26 @@ Leider ist es (im Moment) nicht möglich das Programm über Total Commander zu n
 
 ### Sicherung/Wiederherstellung über PS4000
 - Sicherung oder Wiederherstellung starten -> Programm startet automatisch
-- Zum Datensicherungsordner navigieren
+- Zum Datensicherungsordner navigieren.
 - Auswählen ob man mit dem Projekt fertig ist oder nur eine Zwischensicherung macht.
-- Sichergehen dass der Ordner aktiv ist (Rahmen ist nicht grau)
-- In der Benutzeroberfläche des Programms auf "Sichern" oder "Wiederherstellen" klicken
-- Sicherung wie gewohnt ablegen oder Wiederherstellung starten
+- Sichergehen dass der Ordner aktiv ist (Rahmen ist nicht grau).
+- In der Benutzeroberfläche des Programms auf "Sichern" oder "Wiederherstellen" klicken.
+- Sicherung wie gewohnt ablegen oder Wiederherstellung starten.
 
 ### Sicherung/Wiederherstellung über Windows Explorer
 - Rechtsklick auf das blaue D in der Schnellstartleiste -> Ablage über Explorer
-- Zum Datensicherungsordner navigieren
+- Zum Datensicherungsordner navigieren.
 - Auswählen ob man mit dem Projekt fertig ist oder nur eine Zwischensicherung macht.
-- Sichergehen dass der Ordner aktiv ist (Rahmen ist nicht grau)
-- In der Benutzeroberfläche des Programms auf "Sichern" oder "Wiederherstellen" klicken
-- Sicherung ablegen/entnehmen
+- Sichergehen dass der Ordner aktiv ist (Rahmen ist nicht grau).
+- In der Benutzeroberfläche des Programms auf "Sichern" oder "Wiederherstellen" klicken.
+- Sicherung ablegen/entnehmen.
 
 ### Sicherung ausbuchen
 - Rechtsklick auf das blaue D in der Schnellstartleiste -> Ablage über Explorer
-- In der Benutzeroberfläche des Programms auf "Ausbuchen" klicken
-- Zum Datensicherungsordner navigieren und die Datei auswählen die verschickt werden soll
-- Name der Person an die die Sicherung verschickt/gegeben wird eintragen und bestätigen
-- Empfänger anpassen, im Moment wird noch nicht die volle Emailadresse automatisch eingetragen
+- In der Benutzeroberfläche des Programms auf "Ausbuchen" klicken.
+- Zum Datensicherungsordner navigieren und die Datei auswählen die verschickt werden soll.
+- Name der Person an die die Sicherung verschickt/gegeben wird eintragen und bestätigen.
+- Empfänger anpassen, im Moment wird noch nicht die volle Emailadresse automatisch eingetragen.
 
 ## Einblendpunkt-/Datenpunktzähler
 Dieses Programm zählt anhand eines Stapesdrucks die Anzahl der Einblend- oder Datenpunkte einer Neutrino GLT.
@@ -81,5 +80,17 @@ Dieses Programm zählt anhand eines Stapesdrucks die Anzahl der Einblend- oder D
 ## GLT Fernbedienung
 Erzeugt/entfernt Trendkurven 1-fach, 5-fach und 10-fach. Setzt Störmeldung auf Störung = 0 oder Störung = 1 1-fach, 5-fach und 10-fach.
 
-## Autovervollständigung
-Dieses script ist nur nach Installation von Autohotkey verfügbar.
+## Autovervollständigung (nur nach Installation von Autohotkey verfügbar)
+Dieses script ermöglicht es Wörtern oder Zeichenfolgen Abkürzungen zuzuweisen oder auch beliebte Rechtschreibfehler sofort zu korrigieren, z.B.:
+
+- mfg = Mit freundlichen Grüßen
+- rep. = Rep.-Schalter
+- Analge = Anlage
+- e@ = email@domain.de
+
+Einige Autovervollständigungen sind schon voreingestellt.
+
+### Vorgehensweise:
+- Rechtsklick auf A.G.N.O.S. in der Schnellstartleiste -> Autovervollständigung
+- Das zu ersetzende Wort oder Zeichenfolge markieren und Strg + Alt + A drücken, die Abkürzung und eventuelle Bedingungen (siehe Dokumentation) eingeben und bestätigen
+- Jede Autovervollständigung kann ich Nachhinein noch geändert oder gelöscht werden. Dazu Rechtsklick auf das blaue A -> Editieren...
