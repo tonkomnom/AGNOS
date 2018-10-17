@@ -24,7 +24,7 @@ Erreichbar bin ich telefonisch (4128), per Email, oder über Microsoft Teams - p
 ![](https://i.imgur.com/pDZA7ET.png "Rechtsklickmenü")
 
 ### Installation
-Die Installation von [Autohotkey](https://autohotkey.com/) ist nicht nötig, ein paar Funktionen werden aber erst dadurch verfügbar. Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene \*.exe Datei ausführen. Download-Link folgt in Kürze.
+Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene \*.exe Datei ausführen. Autohotkey wird automatisch mit installiert. Download-Link folgt in Kürze.
 
 ### Autostart
 Das Hauptscript, die PS4000 Datensicherungs-Doku und die Autovervollständigung können alle automatisch mit Windows gestartet werden. Dies lässt sich per Rechtsklick in der Schnellstartleiste unter Optionen ändern.
@@ -100,7 +100,7 @@ Erzeugt/entfernt Trendkurven 1-fach, 5-fach und 10-fach. Setzt Störmeldung auf 
 
 Dieses script is extrem von der Geschwindigkeit der GLT abhängig - mit dem Schieberegler kann die Verzögerung zwischen den einzelnen Schritten verändert werden und ein Klick mit der linken Maustaste unterbricht im Notfall eine 5- oder 10-fach Schleife.
 
-## Autovervollständigung (nur nach Installation von Autohotkey verfügbar)
+## Autovervollständigung
 Dieses script ermöglicht es Wörtern oder Zeichenfolgen Abkürzungen zuzuweisen oder auch beliebte Rechtschreibfehler sofort zu korrigieren, z.B.:
 
 - mfg = Mit freundlichen Grüßen
@@ -111,7 +111,7 @@ Dieses script ermöglicht es Wörtern oder Zeichenfolgen Abkürzungen zuzuweisen
 Einige Autovervollständigungen sind schon voreingestellt.
 
 ### Vorgehensweise:
-- Rechtsklick auf A.G.N.O.S. in der Schnellstartleiste -> Autovervollständigung
+- Um das script zu starten falls es nicht automatisch mit Windows gestartet wird Rechtsklick auf A.G.N.O.S. in der Schnellstartleiste -> Autovervollständigung
 - Das zu ersetzende Wort oder Zeichenfolge markieren und Strg + Alt + A drücken, die Abkürzung und eventuelle Bedingungen ([siehe Dokumentation](https://ahkde.github.io/docs/Hotstrings.htm)) eingeben und bestätigen</br>
 ![](https://i.imgur.com/f9FMJXd.png "Hotstrings")
 - Jede Autovervollständigung kann ich Nachhinein noch geändert oder gelöscht werden. Dazu Rechtsklick auf das blaue A -> Editieren...

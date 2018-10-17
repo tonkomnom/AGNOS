@@ -22,8 +22,7 @@ Anmeldung auf GitHub hier (https://github.com/tonkomnom), alternative Kontaktdat
 die Autovervollständigung, die Neutrino GLT Fernbedienung und der Einblendpunkt/Datenpunkt-Zähler starten.
 
 ### Installation
-Die Installation von Autohotkey (https://autohotkey.com/) ist nicht nötig, ein paar Funktionen werden aber erst dadurch verfügbar.
-Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene .exe Datei ausführen. Download-Link folgt in Kürze.
+Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene .exe Datei ausführen. Autohotkey wird automatisch mit installiert.
 
 ### Autostart
 Das Hauptscript, die PS4000 Datensicherungs-Doku und die Autovervollständigung können alle automatisch
@@ -117,7 +116,7 @@ Dieses script ermöglicht es Wörtern oder Zeichenfolgen Abkürzungen zuzuweisen
 Einige Autovervollständigungen sind schon voreingestellt.
 
 ### Vorgehensweise:
-- Rechtsklick auf A.G.N.O.S. in der Schnellstartleiste -> Autovervollständigung
+- Um das script zu starten falls es nicht automatisch mit Windows gestartet wird Rechtsklick auf A.G.N.O.S. in der Schnellstartleiste -> Autovervollständigung
 - Das zu ersetzende Wort oder Zeichenfolge markieren und Strg + Alt + A drücken, die Abkürzung und eventuelle
 Bedingungen (siehe Dokumentation (https://ahkde.github.io/docs/Hotstrings.htm)) eingeben und bestätigen
 - Jede Autovervollständigung kann ich Nachhinein noch geändert oder gelöscht werden. Dazu Rechtsklick auf das blaue A -> Editieren...
