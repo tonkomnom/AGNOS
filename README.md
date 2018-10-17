@@ -3,6 +3,13 @@
 
 [Source Code (master) Download](https://github.com/tonkomnom/AGNOS/archive/master.zip) - funktioniert nur mit Autohotkey. Achtung, keine Release-Version, code ändert sich ständig!
 
+## Inhaltsverzeichnis
+[Tastaturkürzel](https://github.com/tonkomnom/AGNOS#tastaturk%C3%BCrzel)</br>
+[Datensicherungs-Dokumentation](https://github.com/tonkomnom/AGNOS#ps4000-datensicherungs-dokumentation-datsidoku)</br>
+[Einblendpunkt-/Datenpunktzähler](https://github.com/tonkomnom/AGNOS#einblendpunkt-datenpunktz%C3%A4hler)</br>
+[Neutrino GLT Fernbedienung](https://github.com/tonkomnom/AGNOS#glt-fernbedienung)</br>
+[Autovervollständing](https://github.com/tonkomnom/AGNOS#autovervollst%C3%A4ndigung-nur-nach-installation-von-autohotkey-verf%C3%BCgbar)
+
 ## Vorwort
 Dies ist eine Sammlung von scripts und Programmen um diverse Arbeitsabläufe zu erleichtern und/oder beschleunigen. Ich teste alles auf richtige Funktion und Fehlerfreiheit, kann und werde dies aber nie garantieren. Viele Funktionen hängen zum Teil maßgeblich von der Geschwindigkeit der Rechner und Systeme ab. Ich versuche dies immer zu berücksichtigen, was aber natürlich nicht immer klappen kann.
 
@@ -81,7 +88,7 @@ Dieses Programm zählt anhand eines Stapesdrucks die Anzahl der Einblend- oder D
 - Die Datei an einem beliebigen Ort speichern.
 - Das Programm starten und die Datei einlesen.
 
-## GLT Fernbedienung
+## Neutrino GLT Fernbedienung
 Erzeugt/entfernt Trendkurven 1-fach, 5-fach und 10-fach. Setzt Störmeldung auf Störung = 0 oder Störung = 1 1-fach, 5-fach und 10-fach.
 
 ### Vorgehensweise:
