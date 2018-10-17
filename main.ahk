@@ -205,7 +205,7 @@ sautohotstringgen:
 				{
 					Menu, options, Check, Autovervollständigung mit Windows starten
 					IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-					FileCreateShortcut, %A_ScriptDir%\core\hotstringgen.exe, %A_Startup%\hotstringgen.lnk
+					FileCreateShortcut, %A_ScriptDir%\core\hotstringgen\hotstringgen.exe, %A_Startup%\hotstringgen.lnk
 				}
 		}
 	else
@@ -220,7 +220,7 @@ sautohotstringgen:
 				{
 					Menu, options, Check, Autovervollständigung mit Windows starten
 					IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_hotstringgen
-					FileCreateShortcut, %A_ScriptDir%\core\hotstringgen.ahk, %A_Startup%\hotstringgen.lnk
+					FileCreateShortcut, %A_ScriptDir%\core\hotstringgen\hotstringgen.ahk, %A_Startup%\hotstringgen.lnk
 				}
 		}
 	return
@@ -242,11 +242,11 @@ sRunhotstringgen:
 	RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
 	if (dir = "")
 		{
-			Run, %A_ScriptDir%\core\hotstringgen.exe
+			Run, %A_ScriptDir%\core\hotstringgen\hotstringgen.exe
 		}
 	else
 		{
-			Run, %A_ScriptDir%\core\hotstringgen.ahk
+			Run, %A_ScriptDir%\core\hotstringgen\hotstringgen.ahk
 		}
 	return
 
@@ -277,7 +277,7 @@ sRunEPDP:
 gAbout:
 	Gui, 99:Destroy
 	Gui, 99:Add, Text, ,Automated Gadgets for Noobs Office Suite
-	Gui, 99:Add, Text, ,Version V0.9.1, 2018-10-16
+	Gui, 99:Add, Text, ,Version V0.10.2, 2018-10-17
 	Gui, 99:Add, Text, ,© Tonk Omnom
 	Gui, 99:Add, Text, cblue gGitlink, https://github.com/tonkomnom
 	Gui, 99:Add, Text,
