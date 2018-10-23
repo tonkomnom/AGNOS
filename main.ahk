@@ -224,23 +224,6 @@ sExit:
 	return
 
 ;hotkeys
-~^s::
-;only used during development
-	SetTitleMatchMode, 2
-	if WinActive(A_ScriptName)
-		{
-			Send, ^s
-			SplashTextOn,,25, Status, Script updated
-			Sleep,1000
-			SplashTextOff
-			Reload
-			Sleep 1000
-			MsgBox,,, The script could not load!
-		}
-	else
-		Send, ^s
-	return
-
 $F12::
 	Suspend, Permit
 	KeyWait, F12, T1.0
