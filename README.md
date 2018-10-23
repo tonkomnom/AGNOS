@@ -24,7 +24,7 @@ Erreichbar bin ich telefonisch (4128), per Email, oder über Microsoft Teams - p
 ![](https://i.imgur.com/pDZA7ET.png "Rechtsklickmenü")
 
 ### Installation
-Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene \*.exe Datei ausführen. Autohotkey wird automatisch mit installiert. Download-Link folgt in Kürze.
+Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene \*.zip Datei am gewünschten Ort entpacken und "setup.exe" ausführen. Autohotkey wird mehr oder weniger automatisch mit installiert. Download-Link folgt in Kürze.
 
 ### Autostart
 Das Hauptscript, die PS4000 Datensicherungs-Doku und die Autovervollständigung können alle automatisch mit Windows gestartet werden. Dies lässt sich per Rechtsklick in der Schnellstartleiste unter Optionen ändern.

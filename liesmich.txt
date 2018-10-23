@@ -22,7 +22,8 @@ Anmeldung auf GitHub hier (https://github.com/tonkomnom), alternative Kontaktdat
 die Autovervollständigung, die Neutrino GLT Fernbedienung und der Einblendpunkt/Datenpunkt-Zähler starten.
 
 ### Installation
-Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene .exe Datei ausführen. Autohotkey wird automatisch mit installiert.
+Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene .zip Datei am gewünschten Ort entpacken und "setup.exe" ausführen. Autohotkey
+wird mehr oder weniger automatisch mit installiert.
 
 ### Autostart
 Das Hauptscript, die PS4000 Datensicherungs-Doku und die Autovervollständigung können alle automatisch
