@@ -2,9 +2,9 @@
 
 ;there is a reason for this syntax, don't judge.
 RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
-if (dir = "")
-{
-MsgBox, 1, A.G.N.O.S. Setup,
+	if (dir = "")
+		{
+			MsgBox, 65, A.G.N.O.S. Setup,
 (
 Willkommen bei der Installation von A.G.N.O.S.!
 
@@ -14,46 +14,46 @@ Willkommen bei der Installation von A.G.N.O.S.!
 4.) Den Anweisungen der Autohotkey Installation folgen.
 5.) Nach Beendigung starten A.G.N.O.S. und die DatSiDoku automatisch und legen Autostart Einträge und eine Desktopverknüpfung an.
 )
-IfMsgBox, Cancel
-	{
-		ExitApp
-	}
-Run, "C:\Program Files\Microsoft Office 15\root\office15\OUTLOOK.EXE" /c ipm.note /m appinstall&subject=softwareinstallation
-Clipboard := ""
-ClipWait, 120, 1
-	if ErrorLevel
-		{
-			MsgBox, , Fehler, Es konnte keine Eingabe in die Zwischenablage festgestellt werden.
-			ExitApp
+			IfMsgBox, Cancel
+				{
+					ExitApp
+				}
+			Run, "C:\Program Files\Microsoft Office 15\root\office15\OUTLOOK.EXE" /c ipm.note /m appinstall&subject=softwareinstallation
+			Clipboard := ""
+			ClipWait, 120, 1
+				if ErrorLevel
+					{
+						MsgBox, 16, Fehler, Es konnte keine Eingabe in die Zwischenablage festgestellt werden.
+						ExitApp
+					}
+			RunWait, %A_ScriptDir%\core\AutoHotkey_1.1.30.00_setup.exe
+			RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
+				if (dir = "")
+					MsgBox, 16, Fehler, Autohotkey wurde nicht richtig installiert, bitte starten Sie die Installation erneut.
+						IfMsgBox, Ok
+							{
+								ExitApp
+							}
+				else
+					FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Startup%\A.G.N.O.S..lnk, , , , %A_ScriptDir%\core\icons\ugold.ico
+					FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk, , , , %A_ScriptDir%\ps4000\datsidoku\icons\dblue.ico
+					FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Desktop%\A.G.N.O.S..lnk , , , , %A_ScriptDir%\core\icons\ampersand.ico
+					Run, %A_ScriptDir%\main.ahk
+					Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk
 		}
-RunWait, %A_ScriptDir%\core\AutoHotkey_1.1.30.00_setup.exe
-RegRead, dir, HKLM, SOFTWARE\AutoHotkey, InstallDir
-if (dir = "")
-MsgBox, , Fehler, Autohotkey wurde nicht richtig installiert, bitte starten Sie die Installation erneut.
-	IfMsgBox, Ok
-		{
-			ExitApp
-		}
-else
-FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Startup%\A.G.N.O.S..lnk, , , , %A_ScriptDir%\core\icons\ugold.ico
-FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk, , , , %A_ScriptDir%\ps4000\datsidoku\icons\dblue.ico
-FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Desktop%\A.G.N.O.S..lnk , , , , %A_ScriptDir%\core\icons\ampersand.ico
-Run, %A_ScriptDir%\main.ahk
-Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk
-}
-else
-MsgBox, 1, A.G.N.O.S. Setup,
+	else
+		MsgBox, 65, A.G.N.O.S. Setup,
 (
 Willkommen bei der Installation von A.G.N.O.S.!
 
 Autohotkey wurde scheinbar schon installiert, es werden nur Autostart Einträge und eine Desktop Verknüpfung angelegt und das Programm gestartet
 )
-IfMsgBox, Cancel
-	{
-		ExitApp
-	}
-FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Startup%\A.G.N.O.S..lnk, , , , %A_ScriptDir%\core\icons\ugold.ico
-FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk, , , , %A_ScriptDir%\ps4000\datsidoku\icons\dblue.ico
-FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Desktop%\A.G.N.O.S..lnk , , , , %A_ScriptDir%\core\icons\ampersand.ico
-Run, %A_ScriptDir%\main.ahk
-Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk
+		IfMsgBox, Cancel
+			{
+				ExitApp
+			}
+		FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Startup%\A.G.N.O.S..lnk, , , , %A_ScriptDir%\core\icons\ugold.ico
+		FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk, , , , %A_ScriptDir%\ps4000\datsidoku\icons\dblue.ico
+		FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Desktop%\A.G.N.O.S..lnk , , , , %A_ScriptDir%\core\icons\ampersand.ico
+		Run, %A_ScriptDir%\main.ahk
+		Run, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk
