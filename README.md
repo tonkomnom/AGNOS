@@ -1,7 +1,7 @@
 # A.G.N.O.S.
 **A**utomated **G**adgets for **N**oobs **O**ffice **S**uite
 
-[Source Code (master) Download](https://github.com/tonkomnom/AGNOS/archive/master.zip) - funktioniert nur mit Autohotkey. Achtung, keine Release-Version, code ändert sich ständig!
+[Beta-Test Download](https://github.com/tonkomnom/AGNOS/archive/v0.12.0.zip) - Achtung, es können sogar **noch** mehr Fehler als in der fertigen Version vorhanden sein!
 
 ## Inhaltsverzeichnis
 [Tastaturkürzel](https://github.com/tonkomnom/AGNOS#tastaturk%C3%BCrzel)</br>
