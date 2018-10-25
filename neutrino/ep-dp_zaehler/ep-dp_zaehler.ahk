@@ -1,4 +1,5 @@
 ﻿#SingleInstance, force
+SetWorkingDir %A_ScriptDir%
 
 I_Icon = %A_ScriptDir%\icons\zblue.ico
 Menu, Tray, NoStandard
@@ -43,8 +44,10 @@ ep:
 		if var_ep > 0
 			MsgBox, , EP,Gesamtzahl aller Einblendpunkte: %var_ep%
 		else
-			SoundPlay, *16
-			MsgBox, 16, Fehler!, Es konnten keine Einblendpunkte gefunden werden,`nvergewissern Sie sich dass Sie die richtige`nDatei ausgewählt hatten.
+			{
+				SoundPlay, *16
+				MsgBox, 16, Fehler!, Es konnten keine Einblendpunkte gefunden werden,`nvergewissern Sie sich dass Sie die richtige`nDatei ausgewählt hatten.
+			}
 
 	
 		FileDelete, %A_ScriptDir%\temp_ep.txt
@@ -83,8 +86,10 @@ dp:
 		if var_dp > 0
 			MsgBox, , EP,Gesamtzahl aller Informationspunkte: %var_dp%
 		else
-			SoundPlay, *16
-			MsgBox, 16, Fehler!, Es konnten keine Informationspunkte gefunden werden,`nvergewissern Sie sich dass Sie die richtige`nDatei ausgewählt hatten.
+			{
+				SoundPlay, *16
+				MsgBox, 16, Fehler!, Es konnten keine Informationspunkte gefunden werden,`nvergewissern Sie sich dass Sie die richtige`nDatei ausgewählt hatten.
+			}
 	
 		FileDelete, %A_ScriptDir%\temp_dp.txt
 		FileDelete, %A_ScriptDir%\temp_dp.pdf

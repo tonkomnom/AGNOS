@@ -1,4 +1,5 @@
 ﻿#SingleInstance, force
+SetWorkingDir %A_ScriptDir%
 
 I_Icon = %A_ScriptDir%\icons\ablue.ico
 Menu, Tray, NoStandard
