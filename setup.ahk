@@ -35,7 +35,7 @@ Willkommen bei der Installation von A.G.N.O.S.!
 								ExitApp
 							}
 				else
-					FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Startup%\A.G.N.O.S..lnk, , , , %A_ScriptDir%\core\icons\ugold.ico
+					FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Startup%\A.G.N.O.S..lnk, , , , %A_ScriptDir%\core\icons\agold.ico
 					FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk, , , , %A_ScriptDir%\ps4000\datsidoku\icons\dblue.ico
 					FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Desktop%\A.G.N.O.S..lnk , , , , %A_ScriptDir%\core\icons\ampersand.ico
 					Run, %A_ScriptDir%\main.ahk
@@ -52,7 +52,7 @@ Autohotkey wurde scheinbar schon installiert, es werden nur Autostart Einträge 
 			{
 				ExitApp
 			}
-		FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Startup%\A.G.N.O.S..lnk, , , , %A_ScriptDir%\core\icons\ugold.ico
+		FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Startup%\A.G.N.O.S..lnk, , , , %A_ScriptDir%\core\icons\agold.ico
 		FileCreateShortcut, %A_ScriptDir%\ps4000\datsidoku\datsidoku.ahk, %A_Startup%\datsidoku.lnk, , , , %A_ScriptDir%\ps4000\datsidoku\icons\dblue.ico
 		FileCreateShortcut, %A_ScriptDir%\main.ahk, %A_Desktop%\A.G.N.O.S..lnk , , , , %A_ScriptDir%\core\icons\ampersand.ico
 		Run, %A_ScriptDir%\main.ahk

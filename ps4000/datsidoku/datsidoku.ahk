@@ -10,7 +10,6 @@ Menu, Tray, Add, Sichern über PS4000, guiSichern
 Menu, Tray, Add, Wiederherstellen über PS4000, guiHerstellen
 Menu, Tray, Add, Ablage über Explorer, guiExplorer
 Menu, Tray, Add
-Menu, Tray, Add, DatSiDoku anhalten, gPause
 Menu, Tray, Add, Beenden, gExit
 return
 
@@ -217,12 +216,6 @@ Explorersub3:
 			}
 	return
 
-
-gPause:
-	menu, tray, ToggleCheck, Programm anhalten
-	Suspend, Toggle
-	Pause, Toggle
-	return
 
 gExit:
 	ExitApp
