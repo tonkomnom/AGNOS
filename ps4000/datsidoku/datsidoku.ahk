@@ -208,7 +208,7 @@ Explorersub3:
 							SplashTextOn,,25, Status, Datei wurde erzeugt.
 							Sleep, 750
 							SplashTextOff
-							Run, "C:\Program Files\Microsoft Office 15\root\office15\OUTLOOK.EXE" /c ipm.note /m %ausbuchen_name% /a "%currentfile%"
+							Run, OUTLOOK.EXE /c ipm.note /a %currentfile%
 							Gui, Destroy
 						}
 				currentfile :=""

@@ -18,7 +18,7 @@ Willkommen bei der Installation von A.G.N.O.S.!
 				{
 					ExitApp
 				}
-			Run, "C:\Program Files\Microsoft Office 15\root\office15\OUTLOOK.EXE" /c ipm.note /m appinstall&subject=softwareinstallation
+			Run, OUTLOOK.EXE /c ipm.note /m appinstall&subject=softwareinstallation
 			Clipboard := ""
 			ClipWait, 120, 1
 				if ErrorLevel
