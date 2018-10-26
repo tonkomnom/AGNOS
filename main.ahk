@@ -5,6 +5,9 @@ SetWorkingDir %A_ScriptDir%
 SetBatchLines, -1
 SetMouseDelay, -1, -1
 
+I_Icon = %A_ScriptDir%\core\icons\agold.ico
+Menu, Tray, Icon, %I_Icon%, ,1
+
 Menu, Tray, Tip, A.G.N.O.S.
 Menu, Tray, NoStandard
 
@@ -99,18 +102,6 @@ IniRead, vautodatsiinit, %A_ScriptDir%\core\settings.ini, autostart, autostart_d
 			Menu, options, UnCheck, DatSiDoku mit Windows starten
 		}
 
-Loop,
-	{
-		I_Icon = %A_ScriptDir%\core\icons\kblue.ico
-		Menu, Tray, Icon, %I_Icon%, ,1
-		Sleep, 2000
-		I_Icon = %A_ScriptDir%\core\icons\ugold.ico
-		Menu, Tray, Icon, %I_Icon%, ,1
-		Sleep, 2000
-		I_Icon = %A_ScriptDir%\core\icons\pblue.ico
-		Menu, Tray, Icon, %I_Icon%, ,1
-		Sleep, 2000
-	}
 return
 
 stogglehk:

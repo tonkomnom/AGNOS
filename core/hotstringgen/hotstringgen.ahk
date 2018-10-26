@@ -1,7 +1,7 @@
 ﻿#SingleInstance, force
 SetWorkingDir %A_ScriptDir%
 
-I_Icon = %A_ScriptDir%\icons\ablue.ico
+I_Icon = %A_ScriptDir%\icons\vblue.ico
 Menu, Tray, NoStandard
 Menu, Tray, Icon, %I_Icon%, , 1
 Menu, Tray, Tip, Autovervollständigung
