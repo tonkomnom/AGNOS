@@ -32,7 +32,7 @@ Menu, Tray, Add
 Menu, Tray, Add, Beenden, sExit
 
 
-if FileExist(A_Startup "\main.lnk")
+if FileExist(A_Startup "\A.G.N.O.S..lnk")
 	{
 		IniWrite, true, %A_ScriptDir%\core\settings.ini, autostart, autostart_main
 	}
