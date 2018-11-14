@@ -281,6 +281,28 @@ $F12::
 	^s::SendInput, {AltDown}ds{AltUp}
 	;Ctrl+s - save
 
+	^!a::
+	;Ctrl+Alt+a - refresh datapoint texts
+		SendInput, {AltDown}ds{AltUp}
+		Sleep, 300
+		SendInput, {AltDown}xa{AltUp}
+		SendInput, a
+		Sleep, 300
+		SendInput, {Space}
+		SendInput, {Tab 21}
+		SendInput, {Enter}
+		Sleep, 300
+		SendInput, {Tab}
+		SendInput, {Enter}
+		Sleep, 300
+		SendInput, {Tab}
+		SendInput, {Enter}
+		Sleep, 300
+		SendInput, {AltDown}ds{AltUp}
+		Sleep, 300
+		SendInput, {AltDown}d1{AltUp}
+		return
+
 	#Tab::
 	;Win+Tab - close text block
 		SendInput, {Tab 9}
