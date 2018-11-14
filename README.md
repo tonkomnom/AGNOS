@@ -1,7 +1,7 @@
 # A.G.N.O.S.
 **A**utomated **G**adgets for **N**oobs **O**ffice **S**uite
 
-[Beta-Test Download](https://github.com/tonkomnom/AGNOS/archive/v0.12.0.zip) - Achtung, es können sogar **noch** mehr Fehler als in der fertigen Version vorhanden sein!
+[Download V1.0](https://github.com/tonkomnom/AGNOS/archive/V1.0.zip)
 
 ## Inhaltsverzeichnis
 [Tastaturkürzel](https://github.com/tonkomnom/AGNOS#tastaturk%C3%BCrzel)</br>
