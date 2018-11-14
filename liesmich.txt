@@ -42,6 +42,7 @@ die Tastaturkürzel ein oder aus schalten.
 - Doppelklick auf F2 = Öffnet einen Einblendpunkt und die Einblendpunktauswahl. (Bedingung: Einblendpunkt ist ausgewählt)
 - F2 "lang" drücken = Entfernt oder setzt das Häkchen bei Datenpunkttyp in der Datenpunktauswahl. (Bedingung: Datenpunktauswahl ist geöffnet)
 - Windows-Taste + Tab = Schließt das Eingabefenster für Textblocks in "Bedienebene einrichten". (Bedingung: Eingabefenster eines Texblocks ist geöffnet)
+- Strg + Alt + A = Startet 'Anlagebilder anpassen', aktualisiert Klartexte, sichert und lädt die Zeichnung neu. (Bedingung: Bedienebene Einrichten ist aktiv)
 - Strg + Z = Rückgängig (Bedingung: Bedienebene Einrichten ist aktiv)
 - Strg + S = Sichern (Bedingung: Bedienebene Einrichten ist aktiv)
 - Shift + Recht/Links = Rotiert Auswahl nach rechts oder links. (Bedingung: Block ist ausgewählt)

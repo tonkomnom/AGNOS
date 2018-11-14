@@ -24,7 +24,7 @@ Erreichbar bin ich telefonisch (4128), per Email, oder über Microsoft Teams - p
 ![](https://i.imgur.com/pDZA7ET.png "Rechtsklickmenü")
 
 ### Installation
-Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene \*.zip Datei am gewünschten Ort entpacken und "setup.exe" ausführen. Autohotkey wird mehr oder weniger automatisch mit installiert. Download-Link folgt in Kürze.
+Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene \*.zip Datei am gewünschten Ort entpacken und "setup.exe" ausführen. Autohotkey wird mehr oder weniger automatisch mit installiert.
 
 ### Autostart
 Das Hauptscript, die PS4000 Datensicherungs-Doku und die Autovervollständigung können alle automatisch mit Windows gestartet werden. Dies lässt sich per Rechtsklick in der Schnellstartleiste unter Optionen ändern.
@@ -41,6 +41,7 @@ Die Tastaturkürzel und ihre Funktion sind immer nur im entsprechenden Programm 
 - Doppelklick auf F2 = Öffnet einen Einblendpunkt und die Einblendpunktauswahl. (Bedingung: Einblendpunkt ist ausgewählt)
 - F2 "lang" drücken = Entfernt oder setzt das Häkchen bei Datenpunkttyp in der Datenpunktauswahl. (Bedingung: Datenpunktauswahl ist geöffnet)
 - Windows-Taste + Tab = Schließt das Eingabefenster für Textblocks in "Bedienebene einrichten". (Bedingung: Eingabefenster eines Texblocks ist geöffnet)
+- Strg + Alt + A = Startet 'Anlagebilder anpassen', aktualisiert Klartexte, sichert und lädt die Zeichnung neu. (Bedingung: Bedienebene Einrichten ist aktiv)
 - Strg + Z = Rückgängig (Bedingung: Bedienebene Einrichten ist aktiv)
 - Strg + S = Sichern (Bedingung: Bedienebene Einrichten ist aktiv)
 - Shift + Recht/Links = Rotiert Auswahl nach rechts oder links. (Bedingung: Block ist ausgewählt)
