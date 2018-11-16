@@ -48,7 +48,7 @@ Die Tastaturkürzel und ihre Funktion sind immer nur im entsprechenden Programm 
 - Strg + Pfeiltasten = Bewegt die Auswahl um zehn Schritte in die entsprechende Richtung. (Bedingung: Block ist ausgewählt)
 
 ### PS4000:
-- Alt + k: Generiert ein Kommentar mit Info icon und blauem Hintergrund. (Bedingung: SPS-Reiter ist aktiv, Mauszeiger befindet sich auf SPS-Zeichnung)
+- Strg + k: Generiert ein Kommentar mit Info icon und blauem Hintergrund. (Bedingung: SPS-Reiter ist aktiv, Mauszeiger befindet sich auf SPS-Zeichnung)
 
 ### Tric:
 - Windows-Taste + Esc = Schließt eine Tric Zeichnung und ruft die Zeichnugsverwaltung auf. (Bedingung: Tric Zeichnung ist geöffnet, wurde bearbeitet und ist noch nicht gespeichert)
