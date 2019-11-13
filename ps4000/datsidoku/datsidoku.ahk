@@ -1,4 +1,4 @@
-﻿#SingleInstance, force
+#SingleInstance, force
 SetWorkingDir %A_ScriptDir%
 
 I_Icon = %A_ScriptDir%\icons\dblue.ico
@@ -207,7 +207,7 @@ Explorersub3:
 							SplashTextOn,,25, Status, Datei wurde erzeugt.
 							Sleep, 750
 							SplashTextOff
-							Run, OUTLOOK.EXE /c ipm.note /a %currentfile%
+							Run, OUTLOOK.EXE /c ipm.note /a "%currentfile%"
 							Gui, Destroy
 						}
 				currentfile :=""
