@@ -1,4 +1,4 @@
-#SingleInstance, force
+﻿#SingleInstance, force
 SetWorkingDir %A_ScriptDir%
 
 I_Icon = %A_ScriptDir%\icons\dblue.ico

@@ -190,7 +190,7 @@ sRunEPDP:
 gAbout:
 	Gui, 99:Destroy
 	Gui, 99:Add, Text, ,Automated Gadgets for Noobs Office Suite
-	Gui, 99:Add, Text, ,Version V1.0, 2018-11-14
+	Gui, 99:Add, Text, ,Version V1.2, 2019-11-13
 	Gui, 99:Add, Text, ,© Tonk Omnom
 	Gui, 99:Add, Text, cblue gGitlink, https://github.com/tonkomnom
 	Gui, 99:Add, Text,
@@ -321,6 +321,7 @@ $F12::
 					MouseClick, Left, 25, 260
 					MouseClick, Left, 25, 50
 					MouseMove, xpos, ypos
+					Keywait, F2
 					return
 				}
 			else
@@ -335,6 +336,32 @@ $F12::
 									SendInput, {F2}
 									Sleep, 50
 									SendInput, {Tab 2}
+									SendInput, {Space}
+									return
+							}
+				}
+		return
+
+	$F3::
+		KeyWait, F3, T0.5
+			if ErrorLevel
+				{
+					;long - F3
+					SendInput, {F3}
+					return
+				}
+			else
+				{
+					;short - F3
+					KeyWait, F3, D T0.2
+						if ErrorLevel
+							SendInput, {F3}
+						else
+							{
+									;double - open datapoint attributes
+									SendInput, {F2}
+									Sleep, 50
+									SendInput, {Tab}
 									SendInput, {Space}
 									return
 							}
