@@ -11,6 +11,7 @@ Menu, Tray, Add
 
 Menu, Tray, Add, Editieren..., sEdit
 Menu, Tray, Add, Anhalten, sPause
+Menu, Tray, Add, Neu laden, sReload
 Menu, Tray, Add, Beenden, sExit
 return
 
@@ -27,6 +28,9 @@ sPause:
 	Suspend, Toggle
 	Pause, Toggle
 	return
+
+sReload:
+	Reload
 
 sExit:
 	ExitApp
