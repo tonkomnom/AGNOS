@@ -12,7 +12,7 @@
 
 ## Vorwort/Disclaimer
 Dies ist eine Sammlung von scripts und Programmen um diverse Arbeitsabläufe zu erleichtern und/oder beschleunigen. Ich teste alles auf richtige Funktion und Fehlerfreiheit, kann und werde dies aber nie garantieren. Viele Funktionen hängen zum Teil maßgeblich von der Geschwindigkeit der Rechner und Systeme ab. Ich versuche dies immer zu berücksichtigen, was aber natürlich nicht immer klappen kann.
-Gerade bei PS4000 und der Neutrino Oberfläche muss auch sicher gestellt werden dass die richtige Funktion auch druchgeführt werden kann, da beide Programme für Autohotkey nur eine blackbox sind und es somit nicht sieht ob es eine Aktion durchführen kann/darf oder nicht. Z.B. man kann die Aktion Trendkurven anlegen starten obwohl man sich in "Bedieneben einrichten" befindet. AHK kann lediglich prüfen ob eins der beiden Programme aktiv ist und die Befehle dann "freischalten".
+Gerade bei PS4000 und der Neutrino Oberfläche muss auch sicher gestellt werden dass die richtige Funktion auch druchgeführt werden kann, da beide Programme für Autohotkey nur eine blackbox sind und es somit nicht sieht ob es eine Aktion durchführen kann/darf oder nicht. Z.B. man kann die Aktion "Trendkurven anlegen" starten obwohl man sich in "Bedieneben einrichten" befindet. AHK kann lediglich prüfen ob eins der beiden Programme aktiv ist und die Befehle dann "freischalten".
 Ich rate jede Funktion erst einmal vorsichtig zu testen und sich damit vertraut zu machen.
 
 Ich übernehme somit **keinerlei** Verantwortung für Schäden jeglicher Art die durch die Benutzung entstehen! Ich stehe jedoch (fast) jederzeit für Fragen, Fehlerbeseitigung und Hilfe zur Verfügung.
