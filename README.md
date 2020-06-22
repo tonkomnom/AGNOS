@@ -1,7 +1,7 @@
 # A.G.N.O.S.
 **A**utomated **G**adgets for **N**oobs **O**ffice **S**uite
 
-[Download V1.3](https://github.com/tonkomnom/AGNOS/archive/V1.3.zip)
+[Download V1.3.1](https://github.com/tonkomnom/AGNOS/archive/V1.3.1.zip)
 
 ## Inhaltsverzeichnis
 [Tastaturkürzel](https://github.com/tonkomnom/AGNOS#tastaturk%C3%BCrzel)</br>
@@ -10,21 +10,23 @@
 [Neutrino GLT Fernbedienung](https://github.com/tonkomnom/AGNOS#neutrino-glt-fernbedienung)</br>
 [Autovervollständing](https://github.com/tonkomnom/AGNOS#autovervollst%C3%A4ndigung)
 
-## Vorwort
+## Vorwort/Disclaimer
 Dies ist eine Sammlung von scripts und Programmen um diverse Arbeitsabläufe zu erleichtern und/oder beschleunigen. Ich teste alles auf richtige Funktion und Fehlerfreiheit, kann und werde dies aber nie garantieren. Viele Funktionen hängen zum Teil maßgeblich von der Geschwindigkeit der Rechner und Systeme ab. Ich versuche dies immer zu berücksichtigen, was aber natürlich nicht immer klappen kann.
+Gerade bei PS4000 und der Neutrino Oberfläche muss auch sicher gestellt werden dass die richtige Funktion auch druchgeführt werden kann, da beide Programme für Autohotkey nur eine blackbox sind und es somit nicht sieht ob es eine Aktion durchführen kann/darf oder nicht. Z.B. man kann die Aktion Trendkurven anlegen starten obwohl man sich in "Bedieneben einrichten" befindet. AHK kann lediglich prüfen ob eins der beiden Programme aktiv ist und die Befehle dann "freischalten".
+Ich rate jede Funktion erst einmal vorsichtig zu testen und sich damit vertraut zu machen.
 
 Ich übernehme somit **keinerlei** Verantwortung für Schäden jeglicher Art die durch die Benutzung entstehen! Ich stehe jedoch (fast) jederzeit für Fragen, Fehlerbeseitigung und Hilfe zur Verfügung.
 
 Ich bin jederzeit für feedback, Vorschläge und Wünsche offen. Jeglicher code den ich geschrieben habe kann unter [GNU GPL V3](https://www.gnu.org/licenses/gpl-3.0.en.html), [Autohotkey](https://autohotkey.com/) selbst unter [GNU GPL V2](https://www.gnu.org/licenses/gpl-2.0.html) genutzt werden.
 
-Erreichbar bin ich telefonisch (4128), per Email, oder über Microsoft Teams - private Email Adresse sieht man nach Anmeldung auf GitHub [hier](https://github.com/tonkomnom "Tonk's GitHub Profil"), alternative Kontaktdaten gebe ich auf Anfrage heraus.
+Erreichbar bin ich telefonisch (4128), per Email, oder über Microsoft Teams - private Email Adresse sieht man nach Anmeldung auf GitHub [hier](https://github.com/tonkomnom "Tonk's GitHub Profil").
 
 ## Allgemein
 Über das Rechtsklickmenü in der Schnellstartleiste lassen sich die PS4000 Datensicherungs-Doku, die Autovervollständigung, die Neutrino GLT Fernbedienung und der Einblendpunkt/Datenpunkt-Zähler starten.</br>
 ![](https://i.imgur.com/pDZA7ET.png "Rechtsklickmenü")
 
 ### Installation
-Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene \*.zip Datei am gewünschten Ort entpacken und "setup.exe" ausführen. Autohotkey wird mehr oder weniger automatisch mit installiert.
+Zum Installieren von A.G.N.O.S. einfach nur die heruntergeladene \*.zip Datei am gewünschten Ort entpacken und "setup.exe" ausführen und den Anweisungen folgen. Ist noch kein [Autohotkey](https://www.autohotkey.com/)auf dem Rechner vorhanden muss dies per appinstall installiert werden. Wurde [Autohotkey](https://www.autohotkey.com/) schon installiert werden lediglich Autostarteinträge und Desktopverknüpfungen eingerichtet. 
 
 ### Autostart
 Das Hauptscript, die PS4000 Datensicherungs-Doku und die Autovervollständigung können alle automatisch mit Windows gestartet werden. Dies lässt sich per Rechtsklick in der Schnellstartleiste unter Optionen ändern.
@@ -38,9 +40,9 @@ Die Tastaturkürzel und ihre Funktion sind immer nur im entsprechenden Programm 
 - F12 lang drücken (>=1s) = schließt im Notfall alle laufenden Autohotkey scripts. (Bedingung: keine)
 
 ### Neutrino GLT:
-- Doppelklick auf F2 = Öffnet einen Einblendpunkt und die Einblendpunktauswahl. (Bedingung: Einblendpunkt ist ausgewählt)
+- Doppelklick auf F2 = Öffnet einen Einblendpunkt und die Einblendpunktauswahl. Funktioniert nicht bei allen, aber bei den meisten/gängigsten DP. (Bedingung: Einblendpunkt ist ausgewählt)
 - F2 "lang" drücken = Entfernt oder setzt das Häkchen bei Datenpunkttyp in der Datenpunktauswahl. (Bedingung: Datenpunktauswahl ist geöffnet)
-- Windows-Taste + Tab = Schließt das Eingabefenster für Textblocks in "Bedienebene einrichten". (Bedingung: Eingabefenster eines Texblocks ist geöffnet)
+- Windows-Taste + Tab = Schließt das Eingabefenster für Textblocks in "Bedienebene einrichten". (Bedingung: Eingabefenster eines Texblocks ist geöffnet, cursor befindet sich im Textfeld)
 - Strg + Alt + A = Startet 'Anlagebilder anpassen', aktualisiert Klartexte, sichert und lädt die Zeichnung neu. (Bedingung: Bedienebene Einrichten ist aktiv)
 - Strg + Z = Rückgängig (Bedingung: Bedienebene Einrichten ist aktiv)
 - Strg + S = Sichern (Bedingung: Bedienebene Einrichten ist aktiv)
@@ -48,7 +50,7 @@ Die Tastaturkürzel und ihre Funktion sind immer nur im entsprechenden Programm 
 - Strg + Pfeiltasten = Bewegt die Auswahl um zehn Schritte in die entsprechende Richtung. (Bedingung: Block ist ausgewählt)
 
 ### PS4000:
-- Strg + k: Generiert ein Kommentar mit Info icon und blauem Hintergrund. (Bedingung: SPS-Reiter ist aktiv, Mauszeiger befindet sich auf SPS-Zeichnung)
+- Strg + k: Generiert ein Kommentar mit Info icon und blauem Hintergrund. (Bedingung: SPS-Reiter ist aktiv, Mauszeiger befindet sich auf SPS-Zeichnung. Braucht möglicherweise zwei Anläufe, der erste geht ab und zu schief.)
 
 ### Tric:
 - Windows-Taste + Esc = Schließt eine Tric Zeichnung und ruft die Zeichnugsverwaltung auf. (Bedingung: Tric Zeichnung ist geöffnet, wurde bearbeitet und ist noch nicht gespeichert)
