@@ -19,7 +19,7 @@ Ich übernehme somit **keinerlei** Verantwortung für Schäden jeglicher Art die
 
 Ich bin jederzeit für feedback, Vorschläge und Wünsche offen. Jeglicher code den ich geschrieben habe kann unter [GNU GPL V3](https://www.gnu.org/licenses/gpl-3.0.en.html), [Autohotkey](https://autohotkey.com/) selbst unter [GNU GPL V2](https://www.gnu.org/licenses/gpl-2.0.html) genutzt werden.
 
-Erreichbar bin ich telefonisch (4128), per Email, oder über Microsoft Teams - private Email Adresse sieht man nach Anmeldung auf GitHub [hier](https://github.com/tonkomnom "Tonk's GitHub Profil").
+Erreichbar bin ich telefonisch (4128), per Email, oder über Microsoft Teams.
 
 ## Allgemein
 Über das Rechtsklickmenü in der Schnellstartleiste lassen sich die PS4000 Datensicherungs-Doku, die Autovervollständigung, die Neutrino GLT Fernbedienung und der Einblendpunkt/Datenpunkt-Zähler starten.</br>
