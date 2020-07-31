@@ -190,7 +190,7 @@ sRunEPDP:
 gAbout:
 	Gui, 99:Destroy
 	Gui, 99:Add, Text, ,Automated Gadgets for Noobs Office Suite
-	Gui, 99:Add, Text, ,Version V1.3, 2020-06-22
+	Gui, 99:Add, Text, ,Version V1.4, 2020-07-31
 	Gui, 99:Add, Text, ,© Tonk Omnom
 	Gui, 99:Add, Text, cblue gGitlink, https://github.com/tonkomnom
 	Gui, 99:Add, Text,
