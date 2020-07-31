@@ -63,8 +63,8 @@ Sichern:
 	ControlGetText bar_text, ToolbarWindow324, ahk_id %win_id%
 	StringTrimLeft, currentPath, bar_text, 9
 	FormatTime, CurrentDateTime,, yyyy-MM-dd_HH-mm
-	FileDelete, %currentPath%\*abgelegt*.ps5
-	FileAppend, , %currentPath%\%CurrentDateTime% letzte Sicherung abgelegt durch %A_UserName% - %vstatus%.ps5
+	FileDelete, %currentPath%\*abgelegt*.ps*
+	FileAppend, , %currentPath%\%CurrentDateTime% letzte Sicherung abgelegt durch %A_UserName% - %vstatus%.ps6
 		if ErrorLevel
 			{
 				SoundPlay, *16
@@ -96,8 +96,8 @@ Herstellen:
 	ControlGetText bar_text, ToolbarWindow323, ahk_id %win_id%
 	StringTrimLeft, currentPath, bar_text, 9
 	FormatTime, CurrentDateTime,, yyyy-MM-dd_HH-mm
-	FileDelete, %currentPath%\*wiederhergestellt*.ps5
-	FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt wiederhergestellt von %A_UserName%.ps5
+	FileDelete, %currentPath%\*wiederhergestellt*.ps*
+	FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt wiederhergestellt von %A_UserName%.ps6
 		if ErrorLevel
 			{
 				SoundPlay, *16
@@ -142,8 +142,8 @@ Explorersub1:
 	ControlGetText bar_text, ToolbarWindow323, ahk_id %win_id%
 	StringTrimLeft, currentPath, bar_text, 9
 	FormatTime, CurrentDateTime,, yyyy-MM-dd_HH-mm
-	FileDelete, %currentPath%\*abgelegt*.ps5
-	FileAppend, , %currentPath%\%CurrentDateTime% letzte Sicherung abgelegt durch %A_UserName% - %vstatus%.ps5
+	FileDelete, %currentPath%\*abgelegt*.ps*
+	FileAppend, , %currentPath%\%CurrentDateTime% letzte Sicherung abgelegt durch %A_UserName% - %vstatus%.ps6
 		if ErrorLevel
 			{
 				SoundPlay, *16
@@ -165,8 +165,8 @@ Explorersub2:
 	ControlGetText bar_text, ToolbarWindow323, ahk_id %win_id%
 	StringTrimLeft, currentPath, bar_text, 9
 	FormatTime, CurrentDateTime,, yyyy-MM-dd_HH-mm
-	FileDelete, %currentPath%\*wiederhergestellt*.ps5
-	FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt wiederhergestellt von %A_UserName%.ps5
+	FileDelete, %currentPath%\*wiederhergestellt*.ps*
+	FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt wiederhergestellt von %A_UserName%.ps6
 		if ErrorLevel
 			{
 				SoundPlay, *16
@@ -183,7 +183,7 @@ Explorersub2:
 	return
 
 Explorersub3:
-	FileSelectFile, currentfile,,%A_Desktop%, Datei auswählen..., *.ps5
+	FileSelectFile, currentfile,,%A_Desktop%, Datei auswählen..., *.ps*
 		if (currentfile = "")
 			{
 				SoundPlay, *16
@@ -197,9 +197,9 @@ Explorersub3:
 			MsgBox,, Fehler!, Sie haben keinen Namen angegeben, bitte erneut versuchen.
 		else
 			{
-				FileDelete, %currentPath%\*übergeben*.ps5
+				FileDelete, %currentPath%\*übergeben*.ps*
 				FormatTime, CurrentDateTime,, yyyy-MM-dd_HH-mm
-				FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt übergeben an %ausbuchen_name%.ps5
+				FileAppend, , %currentPath%\%CurrentDateTime% ACHTUNG! Projekt übergeben an %ausbuchen_name%.ps6
 					if ErrorLevel
 						MsgBox,, Fehler!, Achtung, es wurde keine Datei erzeugt!
 					else
