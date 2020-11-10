@@ -56,7 +56,7 @@ Die Tastaturkürzel und ihre Funktion sind immer nur im entsprechenden Programm 
 - Windows-Taste + Esc = Schließt eine Tric Zeichnung und ruft die Zeichnugsverwaltung auf. (Bedingung: Tric Zeichnung ist geöffnet, wurde bearbeitet und ist noch nicht gespeichert)
 
 ## PS4000 Datensicherungs-Dokumentation (DatSiDoku)
-Dieses Program dient dazu PS4000 Datensicherungen besser und einfacher zu dokumentieren und nachzuverfolgen. Das Programm startet entweder automatisch beim Starten einer Sicherung oder Wiederherstellung oder über das Rechtsklick Menü des Taskleistensymbols. Es legt entsprechend des Vorgangs eine Datei mit aktuellem Datum, Art des Vorgangs und Name des Nutzers ab. Diese Datei hat eine \*.ps5 Endung, ist somit auch in PS4000 sichtbar (im Gegensatz zu einer \*.txt Datei). Die Option "Ablage über Explorer" ermöglicht es die Datei für jemanden auszubuchen und deren Namen zu hinterlegen.
+Dieses Program dient dazu PS4000 Datensicherungen besser und einfacher zu dokumentieren und nachzuverfolgen. Das Programm startet entweder automatisch beim Starten einer Sicherung oder Wiederherstellung oder über das Rechtsklick Menü des Taskleistensymbols. Es legt entsprechend des Vorgangs eine Datei mit aktuellem Datum, Art des Vorgangs und Name des Nutzers ab. Diese Datei hat eine \*.ps6 Endung, ist somit auch in PS4000 sichtbar (im Gegensatz zu einer \*.txt Datei). Die Option "Ablage über Explorer" ermöglicht es die Datei für jemanden auszubuchen und deren Namen zu hinterlegen.
 
 Leider ist es (im Moment) nicht möglich das Programm über Total Commander zu nutzen.
 
@@ -112,6 +112,9 @@ Dieses script ermöglicht es Wörtern oder Zeichenfolgen Abkürzungen zuzuweisen
 - e@ = email@domain.de
 
 Einige Autovervollständigungen sind schon voreingestellt.
+
+## QaSS - Qanteon Störmeldescript
+Dieses Script legt in PS4000 automatisiert BACnet Störmeldungen an, fügt alle Stufentexte ein, legt die Störmeldepriorität fest und stellt die entsprechende Meldegruppe ein. Bei Bedarf lässt sich die Störmeldung invertieren.
 
 ### Vorgehensweise:
 - Um das script zu starten falls es nicht automatisch mit Windows gestartet wird Rechtsklick auf A.G.N.O.S. in der Schnellstartleiste -> Autovervollständigung
