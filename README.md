@@ -103,6 +103,12 @@ Erzeugt/entfernt Trendkurven 1-fach, 5-fach und 10-fach. Setzt Störmeldung auf 
 
 Dieses script is extrem von der Geschwindigkeit der GLT abhängig - mit dem Schieberegler kann die Verzögerung zwischen den einzelnen Schritten verändert werden und ein Klick mit der linken Maustaste unterbricht im Notfall eine 5- oder 10-fach Schleife.
 
+## QaSS - Qanteon Störmeldescript
+Dieses Script legt in PS4000 automatisiert BACnet Störmeldungen an, fügt alle Stufentexte ein, legt die Störmeldepriorität fest und stellt die entsprechende Meldegruppe ein. Bei Bedarf lässt sich die Störmeldung invertieren.
+
+### Vorgehensweise:
+Im Moment bedarf es noch einer persönlichen Einweisung.
+
 ## Autovervollständigung
 Dieses script ermöglicht es Wörtern oder Zeichenfolgen Abkürzungen zuzuweisen oder auch beliebte Rechtschreibfehler sofort zu korrigieren, z.B.:
 
@@ -112,9 +118,6 @@ Dieses script ermöglicht es Wörtern oder Zeichenfolgen Abkürzungen zuzuweisen
 - e@ = email@domain.de
 
 Einige Autovervollständigungen sind schon voreingestellt.
-
-## QaSS - Qanteon Störmeldescript
-Dieses Script legt in PS4000 automatisiert BACnet Störmeldungen an, fügt alle Stufentexte ein, legt die Störmeldepriorität fest und stellt die entsprechende Meldegruppe ein. Bei Bedarf lässt sich die Störmeldung invertieren.
 
 ### Vorgehensweise:
 - Um das script zu starten falls es nicht automatisch mit Windows gestartet wird Rechtsklick auf A.G.N.O.S. in der Schnellstartleiste -> Autovervollständigung
