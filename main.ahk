@@ -27,7 +27,6 @@ Menu, Tray, Add, DatSiDoku, sDatSiDoku
 Menu, Tray, Add, Autovervollständigung, sRunhotstringgen
 Menu, Tray, Add, Neutrino GLT Fernbedienung, sRunremote
 Menu, Tray, Add, EP/DP Zähler, sRunEPDP
-Menu, Tray, Add, QaSS, sRunQaSS
 Menu, Tray, Add
 
 Menu, Tray, Add, Beenden, sExit
@@ -188,14 +187,10 @@ sRunEPDP:
 	Run, %A_ScriptDir%\neutrino\ep-dp_zaehler\ep-dp_zaehler.ahk
 	return
 
-sRunQaSS:
-	Run, %A_ScriptDir%\ps4000\qass\qass.ahk
-	return
-
 gAbout:
 	Gui, 99:Destroy
 	Gui, 99:Add, Text, ,Automated Gadgets for Noobs Office Suite
-	Gui, 99:Add, Text, ,Version V1.5, 2020-10-02
+	Gui, 99:Add, Text, ,Version V1.6, 2021-03-13
 	Gui, 99:Add, Text, ,© Tonk Omnom
 	Gui, 99:Add, Text, cblue gGitlink, https://github.com/tonkomnom
 	Gui, 99:Add, Text,
@@ -204,7 +199,7 @@ gAbout:
 	return
 
 	Gitlink:
-		Run, https://github.com/tonkomnom
+		Run, https://gitlab.com/tonkomnom
 		return
 
 sHelp:
@@ -212,7 +207,7 @@ sHelp:
 	return
 
 sHelponline:
-	Run, https://github.com/tonkomnom/AGNOS
+	Run, https://gitlab.com/tonkomnom/AGNOS
 	return
 
 sExit:
